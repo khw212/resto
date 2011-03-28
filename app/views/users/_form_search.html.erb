@@ -1,0 +1,18 @@
+<h1 class="first"><%= t('resto.navigation.search_job_seeker') %></h1>
+
+<div class="searchform">
+<!--  <p><%= t('resto.messages.search.job_seeker') %></p>-->
+  <% form_tag accounts_path, :method => :get do %>
+    <%= label_tag :profile, t('resto.form.fieldset.profile') %>
+    <br />
+    <%= select_tag :profile, options_for_select([ ["", nil],["Admin", "admin"], ["Moderator", "moderator"], ["Job Seeker", "job_seeker"], ["Employer", "employer"] ], params[:profile]) %>
+    <br />
+    <br />
+    <input value="<%= t('resto.form.button.search') -%>" type="submit">
+  <% end %>
+
+  <br />
+  
+
+</div>
+

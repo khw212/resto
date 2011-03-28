@@ -1,0 +1,32 @@
+<%= content_for :title, t('resto.heading.employers.pending') %>
+
+<br /><br />
+<div id="employers">
+  <%# divide the display by 2 %>
+  <% v1, v2 = @employers.in_groups(2, false) %>
+  <% [ {"column2-unit-left" => v1}, {"column2-unit-right" => v2} ].each do |a| %>
+    <% k = a.keys.first; v = a.values.first %>
+    <% if v %>
+      <div class="<%= k -%>">
+        <% for employer in v %>
+          <div class="employer">
+            <h3><%= link_to user_display(employer.user), employer_path(employer.id) %></h3>
+            <div>
+              <%= link_to t('resto.form.button.confirm'), confirm_employer_path(employer), :method => :post %>
+              <% if employer.confirmed == 'd' %>
+                <%= t('resto.form.button.declined') %>
+              <% else %>
+                <%= link_to t('resto.form.button.decline'), decline_employer_path(employer), :method => :post %>
+              <% end %>
+            </div>
+          </div>
+          <br /><br /><br />
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+<%= will_paginate @employers %>
+

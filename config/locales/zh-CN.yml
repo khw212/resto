@@ -1,0 +1,338 @@
+--- 
+zh-CN: 
+  activerecord: 
+    attributes: 
+      address: 
+        address: 地址
+        addressable_type: 地址类型
+        adressable: 地址
+        city: 城市
+        postal_code: 邮政编码
+        state: 州
+        telephone: 电话
+      admin: 
+        name: 名字
+        user: 用户
+      business_type: 
+        employers: 雇主
+        name: 名字
+      education: 
+        jobs: 工作
+        name: 名字
+        resumes: 简历
+      employer: 
+        address: 地址
+        city: 城市
+        confidential: 机密
+        business_name: 企业名称
+        business_type: 企业类型
+        job_histories: 工作历史记录
+        jobs: 工作
+        postal_code: 邮政编码
+        resumes: 简历
+        state: 州
+        telephone: 电话
+        user: 用户
+      experience: 
+        job_category: 工作类别
+        resume: 简历
+        year_used: 上次使用的年份
+        years_of_experience: 几年的经验
+      job: 
+        category: 分类
+        city: 城市
+        created_at: 日期
+        education: 学历
+        employer: 雇主
+        experience_level: 经验水平
+        general_description: 一般描述
+        job_category: 职位分类
+        job_requirements: 职位要求
+        location: 位置
+        position: 职位
+        position_name: 标题或职位名称
+        position_type: 招聘职位
+        postal_code: 邮编
+        state: 州
+      job_application: 
+        status: 工作的现状
+      job_category: 
+        experiences: 经验
+        jobs: 工作
+        name: 名字
+        resumes: 简历
+      job_history: 
+        employer: 雇主
+        employer_city: 雇主城市
+        employer_name: 雇主名称
+        employer_state: 雇用州
+        position: 职位
+        resume: 简历
+      job_seeker: 
+        address: 地址
+        authorized_to_work_in_us: 有身份
+        city: 城市
+        gender: 性别
+        name: 名字
+        postal_code: 邮政编码
+        resume: 简历
+        state: 州
+        telephone: 电话
+        user: 用户
+      position_type: 
+        jobs: 工作
+        name: 名字
+      resume: 
+        city: 城市
+        company: 公司
+        date_available: 可用日期
+        desired_hourly_pay_rate: 期望时薪率
+        desired_monthly_salary: 期望月薪
+        desired_position: 想要的职位
+        desired_position_type: 期望职位类型
+        education: 学历
+        employers: 雇主
+        experiences: 经验
+        institution: 机构
+        job_category: 工作类别
+        job_histories: 工作历史记录
+        job_seeker: 求职者
+        job_title: 职称
+        name: 名字
+        objective: 目的
+        preferred_locations: 首选地点
+        public: 公开
+        state: 州
+      resumes: 
+        public: 公开
+      user: 
+        crypted_password: 加密的密码
+        email: 电子邮件
+        login: 登录名
+        password: 密码
+        password_confirmation: 密码（确认）
+        password_salt: 密码盐
+        perishable_token: 易腐令牌
+        persistence_token: 持久性令牌
+        profileable: Profileable
+        profileable_type: Profileable类型
+    models: 
+      address: 地址
+      admin: 管理
+      business_type: 企业类型
+      education: 学历
+      employer: 雇主
+      experience: 经验
+      job: 工作
+      job_application: 职位申请
+      job_category: 工作类别
+      job_history: 工作历史记录
+      job_seeker: 求职者
+      position_type: 职位类型
+      resume: 简历
+      user: 用户
+  authlogic: 
+    attributes: 
+      user_session: 
+        email: 电子邮件
+        login: 登录名
+        password: 密码
+        remember_me: 记得我
+    error_messages: 
+      consecutive_failed_logins_limit_exceeded: 连续失败登录的限制超出，帐户被禁用。
+      email_invalid: 不像一个电子邮件地址。
+      login_blank: 不能空白
+      login_invalid: "应该只使用字母，数字，空格，并请.- _ @。"
+      login_not_found: 无效
+      no_authentication_details: 您没有提供任何细节进行身份验证。
+      not_active: 您的帐户不活跃
+      not_approved: 您的帐户尚未批准
+      not_confirmed: 您的帐户未确认
+      password_blank: 不能空白
+      password_invalid: 无效
+    models: 
+      user_session: UserSession
+  flash: 
+    actions: 
+      create: 
+        notice: "{{resource_name}} 已成功创建。"
+      update: 
+        notice: "{{resource_name}} 已成功更新。"
+  formtastic: 
+    create: 创建
+    required: 必需的
+    save: 保存
+    submit: 提交
+  resto: 
+    display: 
+      hourly_pay: "USD {{amount}}/小时"
+      location: "{{city}}，{{state}}"
+      monthly_salary: "USD {{amount}}/月"
+      search: "目前有 {{count}} 个职位空缺。"
+    footer: 
+      copyright: "版权所有 &copy; {{company}}"
+    form: 
+      button: 
+        activate: 激活
+        add: 添加
+        assign_subpath: "分配子路径"
+        change_education: 改变教育信息
+        change_public: 公开
+        create: 创建
+        decline: 拒绝
+        declined: 拒绝
+        delete: 删除
+        edit: 编辑
+        login: 登录
+        post: 张贴工作
+        remove: 删除
+        search: 搜索
+        suspend: 暂停
+        update: 更新
+        confirm: "确认"
+        show: "显示"
+      contact: 
+        email: 电子邮件
+        message: 消息
+        name: 名字
+        submit: 发送消息
+        website: 网站
+      fieldset: 
+        account: 帐户
+        contact: 消息详细
+        desire: 想要的职位
+        education: 最高学历
+        experience: 技能与经验
+        job_history: 工作经历
+        profile: 概阔
+      hint: 
+        authorized_to_work_in_us: 如果你有美国工作许可，请选此框。
+        confidential: 通过检查，您的商业信息不会透露给公众
+        empty: 空白
+        location: 城市或邮政编码
+        query: 关键词
+      login: 
+        captcha: 请输入图片中的字符
+      profile:
+        female: 女性
+        male: 男性
+      resume: 
+        display: 
+          experience: "{{name}} 在  {{year}}, {{length}}年。"
+        location: 位置
+        status: 
+          private: 保密
+          public: 公开
+    heading: 
+      accounts: 
+        edit: 编辑我的帐户
+        index: 管理帐户
+      contact: 
+        index: 联系我们
+        show: 显示
+      edit: 编辑
+      employers: 
+        index: 雇主目录
+        show: "工作机会的雇主从 {{employer}}"
+        pending: "待雇主"
+      error: 资源未找到（404）
+      unauthorized: "未经授权（401）"
+      job_seekers: 
+        index: 求职者
+      jobs: 
+        edit: 修改招聘信息
+        index: 工作机会
+        new: 发布职位空缺
+      list: 上市
+      login: 登录
+      new: 新的
+      register: 注册
+      welcome: 欢迎
+    messages: 
+      account: 
+        activated: "帐户： {{email}} 激活。"
+        logged_in: 登录成功！
+        logged_out: 注销成功！
+        registered: 帐号注册！
+        employer_registered: "户口登记成功，請等待审查。我们会用電郵件通知你。"
+        employer_confirmed: "帐户： {{email}} 确认。"
+        employer_declined: "帐户： {{email}} 拒绝。"
+        subpath_updated: "/{{subpath}} 已被分配到 {{employer}} 。"
+        suspended: "帐户： {{email}} 暂停。"
+        updated: 帐户更新！
+      confirm: 你确定吗？
+      contact: "请填写下面表格。 <br />"
+      flash: 
+        captcha_error: 输入字符核查無效
+        form_error: 这个时候，在输入错误，与红色标记领域的通知
+        invalid_account: 您的帐户类型无法访问此页
+        must_login: 您必须先登录才能访问此页面
+        must_logout: 您必须退出来访问此页面
+        not_found: 您要求的资源没有被发现
+        unauthorized: "我们很抱歉。<br />您的帐户未被授权查看此网页。<br />请使用导航上面。"
+        resume: 
+          update: 恢复已成功更新。
+      job_application: 
+        phone_needed: 请更新申请工作之前，你的电话号码
+        status: 
+          employer: 
+            favored: 加入收藏
+            read: 申请人
+            rejected: 被拒绝
+            unread: 未读
+          job_seeker: 
+            "0": 雇主还没有看过您的申请。
+            "1": 雇主已经看过您的申请了。
+            "2": 您是雇主的青睐。
+            "3": 雇主不会考虑您的申请。
+      msg_sent: "您的邮件已发送。 <br />感谢您与我们联系。 <br />"
+      application_submitted: "谢谢您。你的工作申请已提交。"
+      new_user: 创建新的用户类型：
+      register: 
+        employer: 作为雇主，你可以张贴职位供求职者申请。
+        job_seeker: 作为求职者，你可以申請工作。
+      search: 
+        any: 任何
+        date: 日期
+        has_experience: 有经验
+        job_seeker: 输入关键字与城市或区号
+        order: 结果显示方式
+      welcome: "用户欢迎 {{user}}。 <br />请用右侧的框浏览您的帐户。"
+    name: 求职网
+    navigation: 
+      admin: 管理
+      apply_for_job: 应聘此岗位
+      back_to_search_result: «返回搜索结果
+      contact_us: 联系我们
+      edit_profile: 编辑个人资料
+      employer: 雇主
+      home: 主页
+      job_seeker: 求职者
+      login: 登录
+      register: 注册
+      logout: 退出
+      manage_business_types: 管理业务类型
+      manage_educations: 管理教育
+      manage_job_categories: 管理职位类别
+      manage_jobs: 管理工作
+      manage_pending_employers: "等待雇主管理"
+      manage_position_types: 管理岗位类型
+      manage_users: 管理用户
+      moderator: 主持人
+      my_job_applicants: 求职者
+      my_job_applications: 我的求职申请
+      my_jobs: 我的工作
+      my_resume: 我的简历
+      new_data: 新数据
+      post_jobs: 发布招聘
+      read_more: 阅读更多»
+      search: 搜索
+      search_by_keyword: 按关键词搜索
+      search_by_state: 用州名寻找
+      search_job_seeker: 搜索求职者
+      search_jobs: 搜索工作
+      set_employer_location_action: 设置我的商业地址为工作地点
+    pagination: 
+      next: 下一页»
+      previous: «上一页
+    tagline: 实现你的梦想

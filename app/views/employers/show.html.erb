@@ -1,0 +1,20 @@
+<%= content_for :title, @employer.business_name %>
+
+<div class="column1-unit">
+  <% if my_profile?(@employer.user.id) %>
+    <%= render :partial => 'editor', :locals => { :employer => @employer, :id => @employer.user.id } %>
+  <% end %>
+  
+  <h3><%= "#{ @employer.business_type.name } @ #{ @employer.city }, #{ @employer.state }" %></h3>
+  
+  <p>&nbsp;</p>
+  <h3><%= t('resto.heading.employers.show', :employer => @employer.business_name) %></h3>
+  
+  <% for job in @jobs %>
+  <div class="column1-unit">
+    <%= render :partial => 'my_job', :locals => { :job => job } %>
+  </div>
+  <% end %>
+
+  <%= will_paginate @jobs %>
+</div>

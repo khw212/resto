@@ -1,0 +1,102 @@
+<% content_for :javascript do %>
+jQuery(function($) {
+
+  function get_pref_location_data()
+  {
+    return $.data($('ul#preferred_locations').get(0), "resto_pref_locations");
+  }
+  
+  function set_pref_location_data(list)
+  {
+    $.data($('ul#preferred_locations').get(0), "resto_pref_locations", list);
+  }
+
+  function ui_append_pref_location(location)
+  {
+    data = { 
+      location: location, 
+      label: '<%= t('resto.form.button.remove') -%>'
+    }
+    var template = '<li><span>{location}</span> <a href="#" rel="{location}" class="remove-location-action">{label}</a><br /><br /></li>';
+    var html     = $.nano(template, data);
+    $('ul#preferred_locations').append(html);
+  }
+
+  /* initialize the preferred locations */  
+  function ui_load_pref_location()
+  {
+    var pref = $("#resume_preferred_locations").val();
+    if (pref.length == 0) 
+    { set_pref_location_data(new Array());
+    } else {
+      var list = pref.split('.');
+      set_pref_location_data(list);
+      _.each(list, function(item) {
+        ui_append_pref_location(item);
+      });
+    }
+  }
+
+  $("#resume_preferred_locations").hide();
+  
+  ui_load_pref_location();
+
+  $("#add_location").click( function() {
+    var data      = get_pref_location_data();
+    
+    var city = $('#pref-city').val();
+    var state = $('#pref-state').val();
+    if (city =='') { city = "*"; }
+    var location  = city + ', ' + state;
+
+    if (!_.include(data, location)) {
+      data.push(location);
+      set_pref_location_data(data);
+      ui_append_pref_location(location);
+      var text = data.join('.');
+      $("#resume_preferred_locations").val(text);
+    }
+    return false;
+  });
+  
+  $(".remove-location-action").live('click', function() {
+    var data      = get_pref_location_data();
+    var location  = $(this).attr('rel');
+    var list      = _.without(data, location);
+    var text      = list.join('.');
+    
+    set_pref_location_data(list);
+    $("#resume_preferred_locations").val(text);
+    $(this).parents("li").remove();
+    return false;
+  });
+});
+
+<% end %>
+
+<div id="editor_location" class="editor simple_overlay">
+
+<% semantic_form_for(resume, :url => job_seeker_resume_path(job_seeker,resume), :html => { :class => "clean" }) do |form| %>
+
+  
+    <%= form.input :preferred_locations %>
+        <br /><br />
+    <ul id="preferred_locations"></ul>
+
+  <% form.inputs :name => t('resto.form.resume.location') do %>
+    <li class="string">
+      <%= text_field_tag 'pref-city', nil, :name => '' %>
+    </li>
+    <li class="select">
+      <%= select_tag 'pref-state', options_for_select(Carmen::states('US')), :name => '' %>
+    </li>
+      <%= link_to t('resto.form.button.add'), "#", :id => "add_location" %>
+      <br /><br />
+    
+  <% end %>
+
+  <p>
+  <%= form.submit t('resto.form.button.update') %></p>
+<% end %>
+
+</div>

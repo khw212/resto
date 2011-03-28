@@ -1,0 +1,21 @@
+<%= content_for :title, t('resto.heading.contact.index') %>
+
+<div class="column1-unit">
+<p><%= t('resto.messages.contact') %></p>
+  <div class="contactform">
+    <form method="post" action="<%= submit_contact_path -%>">
+      <fieldset><legend> <%= t('resto.form.fieldset.contact') %> </legend>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <p><label for="contact_name" class="left"><%= t('resto.form.contact.name') %></label>
+            <input name="contact[name]" id="contact_name" class="field" value="" tabindex="1" type="text"></p>
+        <p><label for="contact_email" class="left"><%= t('resto.form.contact.email') %></label>
+            <input name="contact[email]" id="contact_email" class="field" value="" tabindex="2" type="text"></p>
+        <%= trap_door_field %>
+        <p><label for="contact_message" class="left"><%= t('resto.form.contact.message') %></label>
+            <textarea name="contact[message]" id="contact_message" cols="45" rows="10" tabindex="5"></textarea></p>
+        <p><%= captcha_block t('resto.form.login.captcha') %></p>
+        <p><input name="submit" id="submit" class="button" value="<%= t('resto.form.contact.submit') -%>" tabindex="6" type="submit"></p>
+      </fieldset>
+    </form>
+  </div>              
+</div>

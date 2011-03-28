@@ -1,0 +1,55 @@
+<%= content_for :title, t('resto.heading.accounts.index') %>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'form_search' %>
+<% end %>
+
+<div class="editor">
+  <h2><%= t('resto.messages.new_user') %></h2>
+  <%= link_to t('resto.navigation.job_seeker'), register_path('job_seeker'), :class => 'action' %>
+  <%= link_to t('resto.navigation.employer'), register_path('employer'), :class => 'action' %>
+  <%= link_to t('resto.navigation.moderator'), register_path('moderator'), :class => 'action' %>
+  <br /><br /><br />
+  <%= link_to t('resto.navigation.admin'), register_path('admin'), :class => 'action' %>
+</div>
+
+<div id="users">
+
+  <%# divide the display by 2 %>
+  <% v1, v2 = @users.in_groups(2, false) %>
+  <% logger.debug(v1.length) %>
+  <% logger.debug(v2.length) %>
+  <% [ {"column2-unit-left" => v1}, {"column2-unit-right" => v2} ].each do |a| %>
+    <% k = a.keys.first; v = a.values.first %>
+    <% if v %>
+      <div class="<%= k -%>">
+        <% for user in v %>
+          <div class="user">
+            <% icon_file = user.active ? "user_active.png" : "user_suspended.png" %>
+            <%= image_tag icon_file %>
+            <h3><%= user_display(user) %></h3>
+            <br /><br />
+            <div>
+              <% if user.profileable_type == "Employer" %>
+                <%= link_to user.profileable_type, employer_path(user.profileable_id) %>
+              <% elsif user.profileable_type == "JobSeeker" %>
+                <%= link_to user.profileable_type, job_seeker_path(user.profileable_id) %>
+              <% else %>
+                <%= user.profileable_type %>
+              <% end %>
+              <br /><br />
+              <% toggle_label = user.active ? t('resto.form.button.suspend') : t('resto.form.button.activate') %>
+              <%= link_to toggle_label, toggle_active_account_path(user) %>
+              <%= link_to t('resto.form.button.edit'), edit_account_path(user) %>
+              <%= link_to t('resto.form.button.delete'), account_path(user), :confirm => t('resto.messages.confirm'), :method => :delete %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
+
+<%= will_paginate @users %>
+

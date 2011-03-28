@@ -1,0 +1,8 @@
+<div id="editor_subpath" class="editor simple_overlay">
+<% semantic_form_for(employer, :url => assign_subpath_employer_path(employer)) do |form| %>
+  <% form.inputs :name => t('resto.form.button.assign_subpath') do %>
+    <%= form.input :subpath, :as => :string, :label => "#{ request.host }/" %>
+  <% end %>
+  <%= form.submit %>
+<% end %>
+</div>

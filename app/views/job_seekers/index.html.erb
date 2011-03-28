@@ -1,0 +1,44 @@
+<%= content_for :title, t('resto.heading.job_seekers.index') %>
+
+
+<% content_for :sidebar do %>
+  <% if me_admin? %>
+    <%= render :partial => 'form_search_admin' %>
+  <% elsif me_employer? %>
+    <%= render :partial => 'form_search' %>
+  <% end %>
+<% end %>
+
+<div id="job_seekers">
+  <% if @job_seekers.nil? || @job_seekers.empty? %>
+    <p><%= t('resto.form.hint.empty') %></p>
+  <% else %>
+    <%# divide the display by 2 %>
+    <% v1, v2 = @job_seekers.in_groups(2, false) %>
+    <% [ {"column2-unit-left" => v1}, {"column2-unit-right" => v2} ].each do |a| %>
+      <% k = a.keys.first; v = a.values.first %>
+      <% if v %>
+        <div class="<%= k -%>">
+          <% for job_seeker in v %>
+              <div class="job_seeker">
+                <h2><%= link_to job_seeker.name, job_seeker_path(job_seeker) %></h2>
+                <p><%= t('resto.display.location', :city => job_seeker.city, :state => job_seeker.state) %></p>
+                
+              <% if my_profile?(job_seeker.user.id) %>
+                <%= render :partial => 'editor', :locals => { :id => job_seeker.user.id } %>
+              <% end %>
+              
+                <span>
+                  <%# TODO: display desired positions & resume excerpts %>
+                  <%# "#{ job_seeker.business_type.name } @ #{ employer.city }, #{ employer.state }" %> 
+                </span>
+              </div>
+              <br /><br />
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= will_paginate(@job_seekers) %>

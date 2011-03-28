@@ -1,0 +1,14 @@
+<div class="column2-unit-left">
+  <%= render :partial => 'form' %>
+</div>
+
+<div class="column2-unit-right">
+<h1 class="pagetitle"><%= t('resto.heading.register') %></h1>
+  <p><%= link_to t('resto.navigation.job_seeker'), register_path('job_seeker') %><br />
+  <%= t('resto.messages.register.job_seeker') %></p>
+
+  <p><%= link_to t('resto.navigation.employer'), register_path('employer') %><br />
+  <%= t('resto.messages.register.employer') %></p>
+
+</div>
+

@@ -1,0 +1,370 @@
+--- 
+zh-TW: 
+  activerecord: 
+    attributes: 
+      address: 
+        address: 地址
+        addressable_type: 地址類型
+        adressable: 地址
+        city: 城市
+        postal_code: 郵政編碼
+        state: 州
+        telephone: 電話
+      admin: 
+        name: 名字
+        user: 用戶
+      business_type: 
+        employers: 雇主
+        name: 名字
+      education: 
+        jobs: 工作
+        name: 名字
+        resumes: 簡歷
+      employer: 
+        address: 地址
+        city: 城市
+        confidential: 機密
+        business_name: 企業名稱
+        business_type: 企業類型
+        job_histories: 工作歷史記錄
+        jobs: 工作
+        postal_code: 郵政編碼
+        resumes: 簡歷
+        state: 州
+        telephone: 電話
+        user: 用戶
+      experience: 
+        job_category: 工作類別
+        resume: 簡歷
+        year_used: 最後一次使用年份
+        years_of_experience: 幾年的經驗
+      job: 
+        category: 分類
+        city: 城市
+        created_at: 日期
+        education: 學歷
+        employer: 雇主
+        experience_level: 經驗水平
+        general_description: 一般描述
+        job_category: 職位分類
+        job_requirements: 職位要求
+        location: 位置
+        position: 職位
+        position_name: 標題或職位名稱
+        position_type: 招聘職位
+        postal_code: 郵編
+        state: 州
+      job_application: 
+        status: 工作的應用現狀
+      job_category: 
+        experiences: 經驗
+        jobs: 工作
+        name: 名字
+        resumes: 簡歷
+      job_history: 
+        employer: 雇主
+        employer_city: 雇主市
+        employer_name: 雇主名稱
+        employer_state: 雇主州
+        position: 職位
+        resume: 簡歷
+      job_seeker: 
+        address: 地址
+        authorized_to_work_in_us: 有工作许可
+        city: 城市
+        gender: 性別
+        name: 名字
+        postal_code: 郵政編碼
+        resume: 簡歷
+        state: 州
+        telephone: 電話
+        user: 用戶
+      position_type: 
+        jobs: 工作
+        name: 名字
+      resume: 
+        city: 城市
+        company: 公司
+        date_available: 可用日期
+        desired_hourly_pay_rate: 期望時薪率
+        desired_monthly_salary: 期望月薪
+        desired_position: 想要的職位
+        desired_position_type: 期望職位類型
+        education: 學歷
+        employers: 雇主
+        experiences: 經驗
+        institution: 機構
+        job_category: 工作類別
+        job_histories: 工作歷史
+        job_seeker: 求職者
+        job_title: 職稱
+        name: 名字
+        objective: 目的
+        preferred_locations: 首選地點
+        public: 公開
+        state: 州
+      resumes: 
+        public: 公開
+      user: 
+        crypted_password: 加密的密碼
+        email: 電子郵件
+        login: 登錄名
+        password: 密碼
+        password_confirmation: 密碼（確認）
+        password_salt: 密碼鹽
+        perishable_token: 易腐令牌
+        persistence_token: 持久性令牌
+        profileable: Profileable
+        profileable_type: Profileable類型
+    models: 
+      address: 地址
+      admin: 管理
+      business_type: 企業類型
+      education: 學歷
+      employer: 雇主
+      experience: 經驗
+      job: 工作
+      job_application: 職位申請
+      job_category: 工作類別
+      job_history: 工作歷史
+      job_seeker: 求職者
+      position_type: 職位類型
+      resume: 簡歷
+      user: 用戶
+  authlogic: 
+    attributes: 
+      user_session: 
+        email: 電子郵件
+        login: 登錄名
+        password: 密碼
+        remember_me: 記得我
+    error_messages: 
+      consecutive_failed_logins_limit_exceeded: 連續失敗登錄的限制超出，帳戶被禁用。
+      email_invalid: 不像一個電子郵件地址。
+      login_blank: 不能空白
+      login_invalid: "應該只使用字母，數字，空格和.- _ @請。"
+      login_not_found: 無效
+      no_authentication_details: 您沒有提供任何細節進行身份驗證。
+      not_active: 您的帳戶不活躍
+      not_approved: 您的帳戶尚未批准
+      not_confirmed: 您的帳戶未確認
+      password_blank: 不能空白
+      password_invalid: 無效
+    models: 
+      user_session: UserSession
+  flash: 
+    actions: 
+      create: 
+        notice: "{{resource_name}} 已成功創建。"
+      update: 
+        notice: "{{resource_name}} 已成功更新。"
+  formtastic: 
+    create: 創建
+    required: 必需的
+    save: 保存
+    submit: 提交
+  number: 
+    currency: 
+      format: 
+        delimiter: ","
+        format: "%u %n"
+        precision: 2
+        separator: "."
+        unit: NT$
+    format: 
+      delimiter: ","
+      precision: 3
+      separator: "."
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          byte: 
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage: 
+      format: 
+        delimiter: ""
+    precision: 
+      format: 
+        delimiter: ""
+  resto: 
+    display: 
+      hourly_pay: "USD {{amount}}/小時"
+      location: "{{city}}，{{state}}"
+      monthly_salary: "USD {{amount}}/月"
+      search: "目前有 {{count}} 个職位空缺。"
+    footer: 
+      copyright: "版權所有 &copy; {{company}}"
+    form: 
+      button: 
+        activate: 激活
+        add: 添加
+        assign_subpath: "分配子路徑"
+        change_education: 改變教育信息
+        change_public: 公開
+        create: 創建
+        decline: 拒絕
+        declined: 拒絕
+        delete: 刪除
+        edit: 編輯
+        login: 登錄
+        post: 張貼工作
+        remove: 刪除
+        search: 搜索
+        suspend: 掛起
+        update: 更新
+        confirm: "確認"
+        show: "顯示"
+      contact: 
+        email: 電子郵件
+        message: 消息
+        name: 名字
+        submit: 發送消息
+        website: 網站
+      fieldset: 
+        account: 帳戶
+        contact: 消息詳細
+        desire: 想要的職位
+        education: 最高學歷
+        experience: 技能與經驗
+        job_history: 過去的雇主
+        profile: 外形
+      hint: 
+        authorized_to_work_in_us: 如果你有美國工作許可，請選此框。
+        confidential: 通過檢查，您的商業信息不會透露給公眾
+        empty: 沒有資料
+        location: 城市或郵政編碼
+        query: 關鍵詞
+      login: 
+        captcha: 請輸入圖片中的字符
+      profile:
+        female: 女性
+        male: 男性
+      resume: 
+        display: 
+          experience: "{{name}} 在 {{year}}, {{length}} 年。"
+        location: 位置
+        status: 
+          private: 不公開
+          public: 公開
+    heading: 
+      accounts: 
+        edit: 編輯我的帳戶
+        index: 管理帳戶
+      contact: 
+        index: 聯繫我們
+        show: 謝謝您
+      edit: 編輯
+      employers: 
+        index: 雇主目錄
+        show: "工作機會的雇主從 {{employer}}"
+        pending: "待雇主"
+      error: 資源未找到（404）
+      unauthorized: "未經授權（401）"
+      job_seekers: 
+        index: 求職者
+      jobs: 
+        edit: 修改招聘信息
+        index: 工作機會
+        new: 發布職位空缺
+      list: 上市
+      login: 登錄
+      new: 新的
+      register: 註冊
+      welcome: 歡迎
+    messages: 
+      account: 
+        activated: "帳戶： {{email}} 激活。"
+        logged_in: 登錄成功！
+        logged_out: 註銷成功！
+        registered: 帳號註冊！
+        employer_registered: "戶口登記成功，請等待審查。我們會用電郵件通知你。"
+        employer_confirmed: "帳戶： {{email}} 確認。"
+        employer_declined: "帳戶： {{email}} 拒絕。"
+        subpath_updated: "/{{subpath}} 已被分配到 {{employer}} 。"
+        suspended: "帳戶： {{email}} 暫停。"
+        updated: 帳戶更新！
+      confirm: 你確定嗎？
+      contact: "請填寫下面表格。 <br />"
+      flash: 
+        captcha_error: "输入字符核查無效"
+        form_error: 有錯誤，在你的輸入，田野上，標有紅色的通知
+        invalid_account: 您的帳戶類型無法訪問此頁
+        must_login: 您必須先登錄才能訪問此頁面
+        must_logout: 您必須退出來訪問此頁面
+        not_found: 您要求的資源沒有被發現
+        unauthorized: "我們很抱歉。<br />您的帳戶未被授權查看此網頁。<br />請使用導航上面。"
+        resume: 
+          update: 恢復已成功更新。
+      job_application: 
+        phone_needed: 請更新您的電話號碼前申請職位
+        status: 
+          employer: 
+            favored: 加入收藏
+            read: 申請人
+            rejected: 被拒絕
+            unread: 未讀
+          job_seeker: 
+            "0": 雇主還沒有看過您的申請。
+            "1": 雇主已經看過您的申請了。
+            "2": 您是雇主的青睞。
+            "3": 雇主不會考慮您的申請。
+      msg_sent: "您的郵件已發送。 <br />謝謝您與我們聯繫。 <br />"
+      application_submitted: "謝謝您。你的工作申請已提交。"
+      new_user: 創建新用戶的類型：
+      register: 
+        employer: 作為雇主，你可以張貼職位供求職者申請。
+        job_seeker: 作為求職者，你可以申請工作。
+      search: 
+        any: 任何
+        date: 日期
+        has_experience: 有經驗
+        job_seeker: 輸入關鍵字與城市或區號
+        order: 結果顯示方式
+      welcome: "用戶歡迎 {{user}}。 <br />請用右側的框瀏覽您的帳戶。"
+    name: 求職網
+    navigation: 
+      admin: 管理
+      apply_for_job: 應聘此崗位
+      back_to_search_result: «返回搜索結果
+      contact_us: 聯繫我們
+      edit_profile: 編輯個人資料
+      employer: 雇主
+      home: 主頁
+      job_seeker: 求職者
+      login: 登錄
+      register: 註冊
+      logout: 退出
+      manage_business_types: 管理業務類型
+      manage_educations: 管理教育
+      manage_job_categories: 管理職位類別
+      manage_jobs: 管理工作
+      manage_pending_employers: "等待雇主管理"
+      manage_position_types: 管理崗位類型
+      manage_users: 管理用戶
+      moderator: 主持人
+      my_job_applicants: 求職者
+      my_job_applications: 我的求職申請
+      my_jobs: 我的工作
+      my_resume: 我的簡歷
+      new_data: 新數據
+      post_jobs: 發布招聘
+      read_more: 閱讀更多»
+      search: 搜索
+      search_by_keyword: 按關鍵詞搜索
+      search_by_state: 用州名尋找
+      search_job_seeker: 搜索求職者
+      search_jobs: 搜索工作
+      set_employer_location_action: 設置我的商業地址為工作地點
+    pagination: 
+      next: 下一頁»
+      previous: «上一頁
+    tagline: 實現你的夢想

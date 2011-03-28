@@ -1,0 +1,54 @@
+/* -------------------------------------------------------------------------------------------------
+
+Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+form.formtastic fieldset ol li p.inline-hints { color:#333; }
+
+--------------------------------------------------------------------------------------------------*/
+
+/* LABELS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li label { width:95%; }
+/* STRING & NUMERIC OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.string input { width:95%; }
+form.formtastic fieldset ol li.numeric input { width:95%; }
+form.formtastic fieldset ol li.select select { width:95%; }
+form.formtastic fieldset ol li.password input { width:95%; }
+
+/* TEXTAREA OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.text textarea { width:95%; height: 10em; }
+
+/* 
+
+from mf42_layout4_text.css : .contactform
+
+*/
+
+form.formtastic {width:90%; margin:2.0em 0 0 0; padding:10px 10px 0 10px; border:solid 1px rgb(200,200,200); background-color:rgb(240,240,240);}
+form.formtastic fieldset {padding:20px 0 0 0 !important /*Non-IE6*/; padding:0 /*IE6*/; margin:0 0 20px 0; border:solid 1px rgb(220,220,220);}
+form.formtastic fieldset legend {margin:0 0 0 5px !important /*Non-IE*/; margin:0 0 20px 5px /*IE6*/; padding:0 2px 0 2px; color:rgb(80,80,80); font-weight:bold; font-size:100%;}
+form.formtastic label {font-size:110%; clear:both;}
+form.formtastic select {padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:100%;}
+form.formtastic input[type="text"],form.formtastic input[type="password"] {padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+form.formtastic textarea {padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+form.formtastic input[type="submit"] {font-size:110%;margin-right:20px; padding:5px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:110%; margin-bottom: 20px !important;}
+form.formtastic input[type="submit"]:hover {cursor: pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80); }
+
+
+/* check box */
+form.formtastic fieldset ol li.boolean label {
+padding-left:0 !important;
+width:auto;
+}
+
+form.formtastic fieldset ol li p.inline-hints {
+color:#666666;
+margin:0.5em 0 0 0;
+clear: left;
+}
+

@@ -1,0 +1,24 @@
+<div class="subcontent-unit-border-orange">
+  <div class="round-border-topleft"></div><div class="round-border-topright"></div>
+  <h1 class="orange"><%= t('resto.navigation.admin') %></h1>
+  <p>
+    <ul>
+      <li>
+        <%= link_to t('resto.navigation.edit_profile'), edit_account_path(current_user.id) %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_users'), accounts_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_jobs'), jobs_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_job_categories'), job_categories_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_business_types'), business_types_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_position_types'), position_types_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_educations'), educations_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_pending_employers'), pending_employers_path %></li>
+    </ul>
+  </p>
+</div>

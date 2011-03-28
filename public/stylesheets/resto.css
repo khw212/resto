@@ -1,0 +1,243 @@
+﻿/* fix for the left layout weird empty space. */
+
+.nav3-grid {
+  border-bottom:1px solid #FFFFFF !important;
+}
+
+.main {
+background:#FFFFFF !important;
+}
+
+/* admin editor */
+div.editor {
+clear:both;
+font-size:110%;
+line-height:1em;
+margin:-0.25em 0 1em;
+padding-bottom: 20px;
+}
+
+form.clean {
+
+background:#FFFFFF !important;
+border:0px;
+border-bottom: 5px !important;
+border-color: #E1E1E1 !important;
+}
+
+form.clean input[type='submit'] {
+  clear: left;
+  display: inline;
+  }
+
+form.clean ol, form.clean ul, form.clean li, div.editor ul, div.editor li { list-style:none !important; }
+
+hr {
+  background-color: #E1E1E1 !important;
+  height:5px !important;
+  border: 0px !important;
+}
+
+/* Editor Styles */
+div.editor a, a.action {
+-webkit-border-radius: 12px;
+-khtml-border-radius: 12px;	
+-moz-border-radius: 12px;
+border-radius: 12px;
+background-color:#89AAD6;
+cursor:pointer;
+font-size:14px !important;
+height:30px;
+padding:2px 20px !important;
+text-decoration:none;
+text-shadow:0 0 2px #C9C3E6;
+margin-right: 20px;
+
+
+}
+
+div.editor a:hover, a.action:hover {
+color:#FFFFFF !important;
+text-decoration:none;
+}
+
+.main-content table { width: 100%; }
+
+span.info {
+  font-size: 1.4em;
+}
+
+/* spam rejects */
+label[for='contact_website'], input#contact_website {
+  display: none;
+}
+
+/* overlay */
+.simple_overlay { 
+     
+    background-color:#fff; 
+    display:none; 
+    width:440px; 
+    z-index: 9999;
+    padding:15px; 
+    text-align:left; 
+    border:2px solid #333; 
+ 
+/*    opacity:0.8; */
+    -moz-border-radius:6px; 
+    -webkit-border-radius:6px; 
+    -moz-box-shadow: 0 0 50px #ccc; 
+    -webkit-box-shadow: 0 0 50px #ccc;     
+} 
+ 
+/* close button positioned on upper right corner */ 
+.simple_overlay .close { 
+    background-image:url(../images/close.png); 
+    position:absolute; 
+    right:5px; 
+    top:5px; 
+    cursor:pointer; 
+    height:35px; 
+    width:35px; 
+}
+
+div.editor img, div.editor span, div.job_application img, div.job_application span {
+  border: 0;
+  clear: none;
+  vertical-align: middle;
+  margin: 4px;
+  padding: 0;
+  float: left;
+}
+
+div.job_applications {
+  margin: 8px 32px 8px 32px;
+}
+
+div.unread a {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.nav0 a {
+color:#467AA7;
+font-family:"宋体";
+font-size: 1.4em;
+text-decoration:none;
+}
+
+.nav0 a:hover {
+color:#2A5A8A;
+text-decoration:underline;
+}
+
+div#state-list {
+padding: 12px;
+text-align: center;
+}
+
+div#state-list span {
+padding-right: 6px;
+padding-bottom: 6px;
+
+}
+
+.user {
+  padding: 8px;
+  margin: 8px;
+}
+
+.user img {
+  float: left;
+  clear: left;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.user h3 {
+  clear: none;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.user div {
+  clear: left;
+  float: left;
+}
+
+.main img {
+  border: 0 !important;
+}
+
+.main p.message {
+  vertical-align: middle !important;
+  padding: 2em;
+}
+
+tr.odd td{
+  background-color: #ffffcc;
+}
+
+tr.even td{
+  background-color: #ccffff;
+}
+
+.editor li {
+  margin: 20px;
+}
+
+pre {
+  display: block;
+  font-family: "Courier New", Courier, monospace, sans-serif;
+	text-align: justify;
+  line-height: 1.6em;
+	font-size: 11px;
+	white-space: pre-wrap;                 /* CSS3 browsers  */
+	white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+	white-space: -pre-wrap;                /* Opera 4 thru 6 */
+	white-space: -o-pre-wrap;              /* Opera 7 and up */
+	word-wrap: break-word;                 /* IE 5.5+ and up */
+	/* overflow-x: auto; */                /* Firefox 2 only */
+	/* width: 99%; */		       /* only if needed */
+	}
+
+ul.login-id {
+  line-height: 2.1em;
+  float: right;
+}
+
+ul.login-id li {
+  vertical-align: middle;
+  border: 0;
+  margin-right: 10px;
+}
+
+ul#preferred_locations li {
+  margin-bottom: 1em !important;
+  background:0 !important;
+}
+
+ul#preferred_locations {
+list-style-image:none !important;
+list-style-position:outside !important;
+list-style-type:none !important;
+}
+
+.header-breadcrumbs #flash_notice {
+	border: 2px solid green;
+	padding: 1em;
+	margin-bottom: 1em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;	
+	font-size: 12px;
+}
+.header-breadcrumbs #flash_error {
+	border: 2px solid red;
+	padding: 1em;
+	margin-bottom: 1em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;	
+	font-size: 12px;	
+}

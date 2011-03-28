@@ -1,0 +1,5 @@
+<%= form_address.input :address %>
+<%= form_address.input :city %>
+<%= form_address.input :state, :as => :select, :collection => Carmen::states('US') %>
+<%= form_address.input :postal_code %>
+<%= form_address.input :telephone %>

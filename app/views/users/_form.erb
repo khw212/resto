@@ -1,0 +1,47 @@
+  <% form.inputs :name => t('resto.form.fieldset.account'), :id => "account" do %>
+    <%= form.input :login, :input_html => { :size => 20 } %>
+    <%= form.input :email, :input_html => { :size => 20 } %>
+    <%= form.input :password, :label => t('activerecord.attributes.user.password') %>
+    <%= form.input :password_confirmation, :label => t('activerecord.attributes.user.password_confirmation') %>
+  <% end %>
+  <%= trap_door_field %>
+  <% form.inputs :name => t('resto.form.fieldset.profile'), :id => "profile" do %>
+    <% form.semantic_fields_for :profileable do |profile_form| %>
+
+      <% # registered user, admin/regular user is decided in controller %>
+      <% if @current_user %>
+        <% profile = @user.profileable_type %>
+      <% # new user %>
+      <% else %>
+        <% profile = params[:id].classify %>
+      <% end %>
+      <%= profile_form.input :profileable_type, :as => :hidden, :value => profile %>
+      
+      <% if profile == "JobSeeker" %>
+        <%= profile_form.input :name %>
+        <%= profile_form.input :gender, :as => :select, :collection => [ [t('resto.form.profile.male'),'M'], [t('resto.form.profile.female'),'F'] ] %>
+        <%= profile_form.input :authorized_to_work_in_us, :hint => t('resto.form.hint.authorized_to_work_in_us') %>
+        <%= render :partial => 'form_address', :object => profile_form %>
+        
+      <% elsif profile == "Employer" %>
+        <%= profile_form.input :business_name %>
+        <%= profile_form.input :business_type %>
+        <%= profile_form.input :confidential, :hint => t('resto.form.hint.confidential') %>
+        <%= render :partial => 'form_address', :object => profile_form %>
+        
+      <% elsif profile == "Moderator" %>
+        <%= profile_form.input :name %>
+        
+      <% elsif profile == "Admin" %>
+        <%= profile_form.input :name %>
+
+      <% end %>
+      
+      <% unless me_admin? %>
+        <% if @new_user %>
+          <%= captcha_block t('resto.form.login.captcha') %>
+        <% end %>
+        <br />
+      <% end %>
+    <% end %>
+  <% end %>

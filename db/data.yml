@@ -1,0 +1,1371 @@
+
+--- 
+addresses: 
+  columns: 
+  - id
+  - telephone
+  - address
+  - city
+  - state
+  - postal_code
+  - addressable_id
+  - addressable_type
+  records: 
+  - - "1"
+    - ""
+    - 321 almond street
+    - Chicago
+    - IL
+    - ""
+    - "1"
+    - JobSeeker
+  - - "2"
+    - ""
+    - ""
+    - ""
+    - AZ
+    - ""
+    - "1"
+    - Employer
+  - - "3"
+    - ""
+    - 3021 S. Broadway
+    - Englewood
+    - CO
+    - ""
+    - "2"
+    - Employer
+
+--- 
+admins: 
+  columns: 
+  - id
+  - name
+  records: 
+  - - "1"
+    - Willy Nst
+
+--- 
+business_types: 
+  columns: 
+  - id
+  - name_en
+  - name_zh_cn
+  - name_zh_tw
+  records: 
+  - - "1"
+    - Restaurant
+    - !binary |
+      6aSQ6aaG
+
+    - !binary |
+      6aSQ6aSo
+
+  - - "2"
+    - Buffet Restaurant
+    - !binary |
+      6Ieq5Yqp6aSQ
+
+    - !binary |
+      6Ieq5Yqp6aSQ
+
+  - - "3"
+    - Take Out Restaurant
+    - !binary |
+      5aSW5Y2W5bqX
+
+    - !binary |
+      5aSW6LOj5bqX
+
+  - - "4"
+    - Dine In Restaurant
+    - !binary |
+      5aCC5ZCD5bqX
+
+    - !binary |
+      5aCC5ZCD5bqX
+
+  - - "5"
+    - Employment Agent
+    - !binary |
+      6IGM5Lia5LuL57uN5omA
+
+    - !binary |
+      6IG35qWt5LuL57S55omA
+
+  - - "6"
+    - Office
+    - !binary |
+      5Yqe5YWs5a6k
+
+    - !binary |
+      6L6m5YWs5a6k
+
+  - - "7"
+    - Other
+    - !binary |
+      5YW25LuW
+
+    - !binary |
+      5YW25LuW
+
+
+--- 
+educations: 
+  columns: 
+  - id
+  - name_en
+  - name_zh_cn
+  - name_zh_tw
+  records: 
+  - - "1"
+    - High School
+    - !binary |
+      6auY5Lit
+
+    - !binary |
+      6auY5Lit
+
+  - - "4"
+    - Associate Degree
+    - !binary |
+      5Ymv5a2m5aOr5a2m5L2N
+
+    - !binary |
+      5Ymv5a245aOr5a245L2N
+
+  - - "6"
+    - Bachelors Degree
+    - !binary |
+      5a2m5aOr5a2m5L2N
+
+    - !binary |
+      5a245aOr5a245L2N
+
+  - - "8"
+    - MBA
+    - !binary |
+      5bel5ZWG566h55CG56GV5aOr
+
+    - !binary |
+      5bel5ZWG566h55CG56Kp5aOr
+
+  - - "9"
+    - Masters Degree
+    - !binary |
+      56GV5aOr5a2m5L2N
+
+    - !binary |
+      56Kp5aOr5a245L2N
+
+  - - "11"
+    - Doctorate Degree
+    - !binary |
+      5Y2a5aOr5a2m5L2N
+
+    - !binary |
+      5Y2a5aOr5a245L2N
+
+  - - "12"
+    - Middle School
+    - !binary |
+      5Lit5a2m
+
+    - !binary |
+      5Lit5a24
+
+  - - "13"
+    - Other
+    - !binary |
+      5YW25LuW
+
+    - !binary |
+      5YW25LuW
+
+
+--- 
+employers: 
+  columns: 
+  - id
+  - business_name
+  - business_type_id
+  - telephone
+  - address
+  - city
+  - state
+  - postal_code
+  - confidential
+  - confirmed
+  records: 
+  - - "1"
+    - Fong Sai Yuk Restaurante
+    - "1"
+    - ""
+    - ""
+    - Gats
+    - AZ
+    - ""
+    - false
+    - true
+  - - "2"
+    - Upscale Chinese Restaurant
+    - "1"
+    - ""
+    - 3021 S. Broadway
+    - Englewood
+    - CO
+    - ""
+    - false
+    - true
+  - - "3"
+    - Panda Restaurant Group, Inc
+    - "1"
+    - ""
+    - ""
+    - Atlanta North
+    - GA
+    - "33333"
+    - true
+    - true
+  - - "4"
+    - WorkSource Oregon
+    - "5"
+    - ""
+    - ""
+    - Portland
+    - OR
+    - ""
+    - false
+    - true
+  - - "5"
+    - Szechuan Restaurant
+    - "1"
+    - "2127773456"
+    - ""
+    - Denver
+    - CO
+    - "11332"
+    - false
+    - true
+  - - "6"
+    - Fan Inc
+    - "2"
+    - ""
+    - ""
+    - Minneapolis
+    - MN
+    - ""
+    - false
+    - true
+  - - "7"
+    - Green Curry Resto
+    - "1"
+    - ""
+    - ""
+    - Louis
+    - KY
+    - ""
+    - false
+    - false
+  - - "8"
+    - My Restaurant
+    - "1"
+    - "2127297610"
+    - 123 main st
+    - New York
+    - NY
+    - "11361"
+    - false
+    - true
+  - - "11"
+    - Employera
+    - "2"
+    - "333333"
+    - aaa
+    - Bagad
+    - KY
+    - "22222"
+    - true
+    - true
+  - - "12"
+    - Bamboo Garden Restaurant
+    - "1"
+    - ""
+    - 2134 main st
+    - "Neenah "
+    - WI
+    - "54956"
+    - false
+    - false
+
+--- 
+experiences: 
+  columns: 
+  - id
+  - job_category_id
+  - resume_id
+  - year_used
+  - years_of_experience
+  records: 
+  - - "4"
+    - "5"
+    - "1"
+    - "1998"
+    - "2"
+  - - "5"
+    - "6"
+    - "1"
+    - "1991"
+    - "2"
+  - - "7"
+    - "2"
+    - "8"
+    - "1999"
+    - "1"
+
+--- 
+job_applications: 
+  columns: 
+  - id
+  - job_seeker_id
+  - employer_id
+  - job_id
+  - status
+  - created_at
+  - updated_at
+  records: 
+  - - "3"
+    - "1"
+    - "1"
+    - "1"
+    - "3"
+    - "2010-01-08T02:23:35+07:00"
+    - "2010-01-22T02:42:06+07:00"
+  - - "4"
+    - "1"
+    - "2"
+    - "2"
+    - "0"
+    - "2010-01-08T02:23:35+07:00"
+    - "2010-01-08T02:23:35+07:00"
+  - - "6"
+    - "2"
+    - "5"
+    - "5"
+    - "0"
+    - "2010-01-05T10:09:33+07:00"
+    - "2010-01-08T02:23:35+07:00"
+  - - "7"
+    - "2"
+    - "2"
+    - "2"
+    - "1"
+    - "2010-01-05T10:10:44+07:00"
+    - "2010-01-08T02:23:35+07:00"
+  - - "8"
+    - "1"
+    - "3"
+    - "3"
+    - "0"
+    - "2010-01-08T14:37:36+07:00"
+    - "2010-01-08T14:37:36+07:00"
+  - - "9"
+    - "1"
+    - "1"
+    - "7"
+    - "2"
+    - "2010-01-08T17:08:17+07:00"
+    - "2010-01-09T10:24:02+07:00"
+  - - "10"
+    - "6"
+    - "2"
+    - "2"
+    - "0"
+    - "2010-01-10T04:27:05+07:00"
+    - "2010-01-10T04:27:05+07:00"
+  - - "12"
+    - "8"
+    - "8"
+    - "8"
+    - "0"
+    - "2010-01-19T11:07:47+07:00"
+    - "2010-01-19T11:07:47+07:00"
+  - - "13"
+    - "1"
+    - "8"
+    - "8"
+    - "0"
+    - "2010-01-19T11:34:15+07:00"
+    - "2010-01-19T11:34:15+07:00"
+  - - "14"
+    - "1"
+    - "3"
+    - "6"
+    - "0"
+    - "2010-01-19T11:37:40+07:00"
+    - "2010-01-19T11:37:40+07:00"
+  - - "15"
+    - "1"
+    - "1"
+    - "9"
+    - "0"
+    - "2010-01-22T06:27:27+07:00"
+    - "2010-01-22T06:27:27+07:00"
+
+--- 
+job_categories: 
+  columns: 
+  - id
+  - name_en
+  - name_zh_cn
+  - name_zh_tw
+  records: 
+  - - "1"
+    - Waiter
+    - !binary |
+      5pyN5Yqh5ZGY
+
+    - !binary |
+      5pyN5YuZ5ZOh
+
+  - - "2"
+    - Waitress
+    - !binary |
+      5aWz5pyN5Yqh5ZGY
+
+    - !binary |
+      5aWz5pyN5YuZ5ZOh
+
+  - - "4"
+    - Manager
+    - !binary |
+      57uP55CG
+
+    - !binary |
+      57aT55CG
+
+  - - "5"
+    - Customer Service Rep.
+    - !binary |
+      5a6i5oi35pyN5Yqh5Luj6KGo
+
+    - !binary |
+      5a6i5oi25pyN5YuZ5Luj6KGo
+
+  - - "6"
+    - Staff
+    - !binary |
+      6IGM5bel
+
+    - !binary |
+      6IG35bel
+
+  - - "7"
+    - Cook
+    - !binary |
+      5Y6o5biI
+
+    - !binary |
+      5bua5bir
+
+  - - "8"
+    - Other
+    - !binary |
+      5YW25LuW
+
+    - !binary |
+      5YW25LuW
+
+
+--- 
+job_histories: 
+  columns: 
+  - id
+  - resume_id
+  - employer_name
+  - employer_city
+  - employer_state
+  - position
+  records: 
+  - - "4"
+    - "1"
+    - City Resto
+    - St. Paul
+    - AL
+    - Greeter
+  - - "5"
+    - "1"
+    - bamboo garden
+    - neenah
+    - WI
+    - manager
+  - - "6"
+    - "8"
+    - Blabla
+    - Gerafo
+    - AK
+    - Waiter
+
+--- 
+job_seekers: 
+  columns: 
+  - id
+  - name
+  - authorized_to_work_in_us
+  - gender
+  - telephone
+  - address
+  - city
+  - state
+  - postal_code
+  records: 
+  - - "1"
+    - Seeker Verandas
+    - true
+    - M
+    - "2345678"
+    - 321 almond street
+    - Chicago
+    - IL
+    - "77777"
+  - - "2"
+    - Willy Nasution
+    - false
+    - M
+    - ""
+    - ""
+    - Portland
+    - OR
+    - ""
+  - - "3"
+    - mary lamb
+    - true
+    - F
+    - ""
+    - ""
+    - Honolulu
+    - HI
+    - "33333"
+  - - "4"
+    - aaa
+    - true
+    - M
+    - ""
+    - ""
+    - Honolulu
+    - HI
+    - ""
+  - - "5"
+    - Jonhy Roberts
+    - true
+    - M
+    - "+1129203433"
+    - ""
+    - Little Rock
+    - AR
+    - ""
+  - - "6"
+    - Leah Lola
+    - false
+    - F
+    - "+123456789"
+    - ""
+    - Ferasa
+    - IL
+    - "23456"
+  - - "7"
+    - David Jones
+    - true
+    - M
+    - ""
+    - 234 main st
+    - New York
+    - NY
+    - "10002"
+  - - "8"
+    - lola lolo
+    - true
+    - M
+    - "1234566"
+    - xxx
+    - Bla
+    - AZ
+    - "22222"
+  - - "9"
+    - seeker 2
+    - true
+    - M
+    - "333344444"
+    - a
+    - sss
+    - AZ
+    - "22222"
+  - - "10"
+    - Wynst UEI
+    - true
+    - M
+    - "3333333333"
+    - aaa
+    - Gatts
+    - AZ
+    - "22222"
+  - - "11"
+    - David Wang
+    - true
+    - M
+    - ""
+    - ""
+    - New York
+    - NY
+    - "11361"
+
+--- 
+jobs: 
+  columns: 
+  - id
+  - postal_code
+  - employer_id
+  - position_name
+  - city
+  - state
+  - job_category_id
+  - position_type_id
+  - education_id
+  - general_description
+  - job_requirements
+  - date_closed
+  - created_at
+  - updated_at
+  - experience_level
+  records: 
+  - - "1"
+    - 
+    - "1"
+    - Waiter Needed!!
+    - Denver
+    - CO
+    - "1"
+    - "1"
+    - "1"
+    - Has good manners.
+    - ""
+    - 
+    - "2009-11-02T08:52:05+07:00"
+    - "2009-11-02T08:52:05+07:00"
+    - 
+  - - "2"
+    - 
+    - "2"
+    - Upscale Chinese Restaurant Hiring Waitstaff
+    - Englewood
+    - CO
+    - "2"
+    - "1"
+    - 
+    - "The Twin Dragon, an upscale Chinese restaurant located at 3021 S. Broadway in Englewood, is hiring waitstaff. Experience serving is preferred. To apply, you must come in and fill out an application Monday-Saturday 2-4 PM or Sunday at 4PM. The job is full time and includes side jobs, including some cleaning and organizational work along with the general duties of serving our customers. The job pays a hourly wage plus good tips! "
+    - "We value:\r\n\
+      -Dependable, hardworking people\r\n\
+      -Willingness to learn our large menu and system of taking orders by hand\r\n\
+      -Ability to keep up in a fast-paced environment\r\n\
+      -Detail oriented people who are accountable for job's side work during slow times\r\n\
+      -Communication skills to interact with our customers and exceed their expectations\r\n\
+      -ENERGY and enthusiasm for the job\r\n\
+      -The attitude of doing whatever it takes to get the job done right before it's an emergency "
+    - 
+    - "2009-09-30T12:39:27+07:00"
+    - "2009-11-10T07:35:29+07:00"
+    - 
+  - - "3"
+    - 
+    - "3"
+    - Now Hiring Service and Kitchen Crew---New Panda Express in Cumming, GA - Panda Restaurant Group, Inc (Atlanta North, Georgia)
+    - Atlanta North
+    - GA
+    - "5"
+    - "1"
+    - 
+    - "A new Panda Express is coming to Cummings, GA! We are hiring for Service and Kitchen positions now.\r\n\
+      \r\n\
+      At Panda we all share a common mission: 'deliver exceptional Asian dining experiences by building an organization where people are inspired to better their lives.' We invest in our people because great people run great operations that will exceed our guests' expectations. Talk to any of our associates and you will experience a culture dedicated to its mission and our five fundamental values - Proactive, Respect/Win-Win, Growth, Great Operations, and Giving.\r\n\
+      \r\n\
+      Panda Restaurant Group includes the original Panda Inn fine dining restaurants, Panda Express, our Gourmet Chinese food concept served in a fast casual environment, and Hibachi San, our Japanese grill concept. The family owned and operated company is still run by founders Andrew and Peggy Cherng. Same store sales have increased every year since 1996 with annual sales in 2008 in excess of $1 billion. Panda Express added 161 new locations in 2008 throughout the United States and will operate well over 1,200 restaurants in 2009.\r\n\
+      \r\n\
+      Panda offers excellent benefits and rewarding opportunities, from entry-level positions to management. We have restaurant positions available nationwide and support center positions in Rosemead, CA. Come join the nation's largest and fastest growing Asian restaurant company.  \r\n\
+      \r\n\
+      We offer all full-time associates (Average 30+ Hours weekly):\r\n\
+      \r\n\
+      # Progressive Compensation Package and Bonus Opportunity\r\n\
+      \r\n\
+      # Paid Training to prepare you for success\r\n\
+      \r\n\
+      # On-Going Career & Leadership Development\r\n\
+      \r\n\
+      # Medical and Dental Insurance\r\n\
+      \r\n\
+      # 401 K with Company Match\r\n\
+      \r\n\
+      # Paid Time Off\r\n\
+      \r\n\
+      # Associate Discounts and free meals when you work\r\n\
+      \r\n\
+      # Opportunities for growth into Management positions\r\n\
+      \r\n\
+      Ready to taste success? Your first step is to apply now! Panda Restaurant Group, Inc is an Equal Employment Opportunity employer "
+    - "Associate Responsibilities:\r\n\
+      \r\n\
+      # People Oriented - enjoys working with our guests and fellow associates, possess good communication and interpersonal skills.\r\n\
+      \r\n\
+      # Growth Oriented - knows that learning and growth are keys to personal and professional success and is willing and able to share with others.\r\n\
+      \r\n\
+      # Greet and serve customers with quality food and service.\r\n\
+      \r\n\
+      # Assist in ensuring a clean, safe and well-organized restaurant.\r\n\
+      \r\n\
+      # Follow food and restaurant safety standards and guidelines.\r\n\
+      \r\n\
+      # Attention to detail in food/service quality and cleanliness\r\n\
+      \r\n\
+      # Ensure a constant and adequate supply of ingredients are prepared according to company specifications and local health regulations. "
+    - 
+    - "2009-10-20T08:30:28+07:00"
+    - "2009-11-02T08:02:37+07:00"
+    - 
+  - - "4"
+    - 
+    - "4"
+    - "Customer Service Representative-Mandarin/Cantonese Bilingual "
+    - ""
+    - 
+    - "5"
+    - "1"
+    - "1"
+    - |-
+      Preferred:
+      * 2 years experience as a Customer Service Representative that included taking a high volume of calls and emails on a daily basis.
+      
+      Employer States:
+      * The ideal candidate will be outgoing with a pleasant phone voice, be even tempered, learn quickly, and demonstrate attention to detail.
+      
+      
+      Hours:
+      * Monday through Saturday
+      * Hours will be between 6:00 a.m. and 8:30 p.m. Monday through Friday and on Saturdays hours are 6:00 a.m. to 6:30 p.m.
+      *Part time hours at first then will move up to full time based on performance.
+      
+      Pay:
+      * $13.85 per hour.
+      
+      Language skill requirement or preference: Employer has call center and they market in region requiring the language skill in their call center to assist monolingual customers.
+    - "Job Duties:\r\n\
+      * Maintain computer records with the use of company software.\r\n\
+      * Provide excellent customer service in a friendly and courteous manner.\r\n\
+      * Answer phones and respond to emails; high volume of each.\r\n\
+      * Assist customers with order problems, billing and shipping questions, and other issues that arise daily.\r\n\
+      * Register, post, and refund payments. \r\n\
+      \r\n\
+      Requirements:\r\n\
+      * Experience in a customer service environment. The following occupations DO NOT QUALIFY: Cashier, Retail Associate, Office Clerk, Waiter, Waitress, and similar positions.\r\n\
+      * Bilingual skills to include fluency in Chinese/Mandarin to speak and type correspondence directly to their monolingual clients.\r\n\
+      * Professional computer skills to include Word and E-mail. Type 40 words per minute.\r\n\
+      * Appearance standards include: Neat and clean, no inappropriate clothing, minimal piercing and tattoos. "
+    - 
+    - "2009-10-20T08:35:37+07:00"
+    - "2009-10-20T08:35:37+07:00"
+    - 
+  - - "5"
+    - 
+    - "5"
+    - Cook
+    - ""
+    - 
+    - "7"
+    - "1"
+    - "1"
+    - "Cook, Chinese food. 2 yrs exp, split shift, F-time. Resume to: Szechuan Restaurant, 9090 W 6th Av, Lakewood, CO 80215"
+    - ""
+    - 
+    - "2009-10-20T08:38:11+07:00"
+    - "2009-10-20T08:38:11+07:00"
+    - 
+  - - "6"
+    - "12345"
+    - "3"
+    - Orlando, FL - Panda Express Restaurant Managers
+    - Orando
+    - FL
+    - "4"
+    - "1"
+    - "6"
+    - |-
+      At Panda we all share a common mission: deliver exceptional Asian dining experiences by building an organization where people are inspired to better their lives. 
+      
+      We invest in our people because great people run great operations that will exceed our guests' expectations. 
+      
+      Talk to any of our associates and you will experience a culture dedicated to its mission and our five fundamental values - Proactive, Respect/Win-Win, Growth, Great Operations, and Giving.
+      
+      Panda Restaurant Group includes the original Panda Inn fine dining restaurants, Panda Express, our Gourmet Chinese food concept served in a fast casual environment, and Hibachi San, our Japanese grill concept. 
+      
+      The family owned and operated company is still run by founders Andrew and Peggy Cherng. Same store sales have increased every year since 1996 with annual sales in 2008 in excess of $1 billion. Panda Express added 161 new locations in 2008 throughout the United States and will operate well over 1,200 restaurants in 2009.
+      
+      Panda offers excellent benefits and rewarding opportunities, from entry-level positions to management. We have restaurant positions available nationwide and support center positions in Rosemead, CA. Come join the nation's largest and fastest growing Asian restaurant company.
+      
+      Our newest restaurant growth in ORLANDO, FL has created new career opportunities for Restaurant Managers.
+      
+      Education Requirements:
+      *BA/BS in Hospitality / Food Services / Business or equivalent experience
+      
+      Job Requirements: 	
+      JOB REQUIREMENTS: We offer all Restaurant Managers:
+      
+      *Progressive Compensation Package and Excellent Bonus Opportunity
+      *5 or more Weeks of Comprehensive Training to prepare you for success
+      *On-Going Career & Leadership Development
+      *Medical, Dental, and Vision Insurance
+      *401 K with Company Match
+      *Paid Time Off and Paid Holidays
+      *Associate Discounts (Panda Express, Hibachi San, Panda Inn plus Theme Parks, 24-Hour Fitness Membership) and free meals when you work
+      *Lucrative Associate Referral Bonus
+      *Pre-Tax Dependent Care Flexible Spending Account
+      
+      Ready to taste success?
+      
+      Your first step is to apply now! Panda Restaurant Group, Inc is an Equal Employment Opportunity employer
+    - "Restaurant Manager responsibilities:\r\n\
+      \r\n\
+      *Lead all people aspects including hiring, training, coaching, and development.\r\n\
+      *Ensure the safety of our Guests and Associates through training and execution of food safety and restaurant safety standards and guidelines.\r\n\
+      *Lead all guest components including excellent food quality, guest service, associate friendliness, and restaurant cleanliness through your team using proven systems and routines.\r\n\
+      *Lead all financial areas including sales growth, cost management, and profit growth.\r\n\
+      Additional expectations of our Restaurant Managers are:\r\n\
+      *Excellent leaders with great people skills\r\n\
+      *Proactive - Sees life as choices and chooses to make a positive impact.\r\n\
+      \r\n\
+      *People Oriented - enjoys working with our guests and associates, possess good communication and interpersonal skills.\r\n\
+      *Growth Oriented - knows that learning and growth are keys to personal and professional success and is willing and able to share learning with others.\r\n\
+      *Results Oriented - focuses on getting results without compromising guest, people, and financial areas.\r\n\
+      *Systems Oriented - Solid planning skills to develop systems and management analysis skills.\r\n\
+      *Excellence - sees excellence as a journey, celebrates each milestone with the team while challenging everyone to achieve continually higher levels of performance. "
+    - 
+    - "2009-10-20T08:40:27+07:00"
+    - "2010-01-17T17:20:25+07:00"
+    - ""
+  - - "7"
+    - 
+    - "1"
+    - TEST ADMIN
+    - Stallion
+    - KS
+    - "2"
+    - "1"
+    - 
+    - cxzxzczxc
+    - ""
+    - 
+    - "2009-11-09T15:39:27+07:00"
+    - "2009-11-09T15:40:55+07:00"
+    - 
+  - - "8"
+    - "10002"
+    - "8"
+    - Waitress wanted
+    - New York
+    - NY
+    - "2"
+    - "1"
+    - 
+    - waitress needed
+    - ""
+    - 
+    - "2010-01-15T07:40:45+07:00"
+    - "2010-01-15T07:40:45+07:00"
+    - 
+  - - "9"
+    - "33333"
+    - "1"
+    - Need Cook
+    - Gats
+    - AZ
+    - "7"
+    - "1"
+    - "4"
+    - A chinese chef
+    - |-
+      Ability to dish out:
+        - Fu yung hai
+    - 
+    - "2010-01-22T02:44:05+07:00"
+    - "2010-01-22T02:44:05+07:00"
+    - ""
+
+--- 
+moderators: 
+  columns: 
+  - id
+  - name
+  records: 
+  - - "1"
+    - 
+  - - "2"
+    - 
+
+--- 
+position_types: 
+  columns: 
+  - id
+  - name_en
+  - name_zh_cn
+  - name_zh_tw
+  records: 
+  - - "1"
+    - Full Time
+    - !binary |
+      5YWo6IGM
+
+    - !binary |
+      5YWo6IG3
+
+  - - "2"
+    - Part Time
+    - !binary |
+      5YW86IGM
+
+    - !binary |
+      5YW86IG3
+
+  - - "3"
+    - Contract
+    - !binary |
+      5ZCI5ZCM5bel
+
+    - !binary |
+      5ZCI5ZCM5bel
+
+
+--- 
+resumes: 
+  columns: 
+  - id
+  - job_seeker_id
+  - name
+  - public
+  - objective
+  - date_available
+  - desired_position_type_id
+  - desired_monthly_salary
+  - desired_hourly_pay_rate
+  - preferred_locations
+  - education_id
+  - institution
+  records: 
+  - - "1"
+    - "1"
+    - Hard Working Waiter 2
+    - true
+    - To work in a buffer restaurant
+    - "2010-06-14"
+    - "1"
+    - "6666"
+    - "85"
+    - Chicago,IL.New York, NJ
+    - "6"
+    - Chicago High
+  - - "2"
+    - "3"
+    - Looking for Work
+    - false
+    - ""
+    - "2004-01-01"
+    - 
+    - 
+    - 
+    - ""
+    - "2"
+    - Armed Force
+  - - "3"
+    - "4"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "4"
+    - "2"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "5"
+    - "5"
+    - ""
+    - true
+    - ""
+    - "2009-08-01"
+    - "1"
+    - 
+    - 
+    - ""
+    - 
+    - 
+  - - "6"
+    - "6"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "7"
+    - "7"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "8"
+    - "8"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "9"
+    - "9"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "10"
+    - "10"
+    - 
+    - false
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+  - - "11"
+    - "11"
+    - 
+    - true
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+
+--- 
+users: 
+  columns: 
+  - id
+  - email
+  - crypted_password
+  - password_salt
+  - persistence_token
+  - perishable_token
+  - profileable_id
+  - profileable_type
+  - active
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - admin@demo.com
+    - 284d59f996c3c660ba1e6fa10523f405759a6e3c3082a2d285c4584512aeb17b4e9f50e8a8d0fe87090be0f4732b5164dad7ea6c86b02a5bde91943e5a06ea2e
+    - so5_BEcy2tTFhZHe0Z8W
+    - 6981e85f501b8e4b09120c9fdc4c62e29fd8fe28a676bc4a3fa500a3930984deb85f1b05e999a106a8ed46bcf1f9a6af1656e7ea173a6713bf37fd07f3b4dbab
+    - cqC9_HIFMeHCnF7V3LN0
+    - "1"
+    - Admin
+    - true
+    - "2009-09-15T19:53:53+07:00"
+    - "2010-01-22T06:51:14+07:00"
+  - - "2"
+    - seeker@demo.com
+    - 80adc00ab4f46289de41577952994ea820923e3e82aa708af4a6e3ec9b5bebf854c05d0f2a116574f0cbb96df05ec3d5116949ecc833ea62e3278e1336b511f3
+    - bOlISI5tBk1ndB3MhRVs
+    - 309126571a21e327df55c086ea4ed8ef3334ce20eb9c0bf09ca4c11d1223c7e42a9d2a2ccbb4364aafd694f261d8711120d9537448f9d8942cb252204cc1f985
+    - 09A9uaZoxeGU4c-ybyfv
+    - "1"
+    - JobSeeker
+    - true
+    - "2009-09-25T08:34:22+07:00"
+    - "2010-01-22T06:26:10+07:00"
+  - - "3"
+    - employer@demo.com
+    - c8ff1ac01db0db014c0f3346357cf4400a05b291db100b105f8e870054255348da11c341e5b382ef5b70cf5f59eb28b992fde707609549bf4317c50a55dd4942
+    - G5kHvZljQ__G--OrBlaK
+    - bab2967fe03980feabecc0132384d6b87ba3ade276ab71e3405271219a3ecc27d3fca975676fe9368df0dd38a01eeeaa572bd17a66f9f48cb1fac6fb96807c8a
+    - gBJAeeaDrn-QtWkveCFt
+    - "1"
+    - Employer
+    - true
+    - "2009-09-25T08:48:20+07:00"
+    - "2010-01-22T02:41:40+07:00"
+  - - "4"
+    - upscale@upscale.com
+    - 2d1babd3e77ee8a9590897e71e467cfd921cac5b476a7127d5fa9d53d498d6fd7e3909cb84b264239465cf830fca65cc3e0ae2632b30a5971204cac640604fab
+    - w-CP_UIhAoBe5wp1ibfd
+    - 5924a00afe0a4dae2b0314bf74082a776ad420818fda8be5056139a7eea35c0d4c30846ed45764b323d5af28c2dc92cd40886382585b902e59835c521b837dd6
+    - XhhQ7oy-ydGp4OB5Tbh0
+    - "2"
+    - Employer
+    - true
+    - "2009-09-30T12:37:40+07:00"
+    - "2010-01-19T19:33:00+07:00"
+  - - "5"
+    - panda@panda.com
+    - 592bbb00cc7f615158dda36e081d1dfde83c31d502263cc7d692da0e954c9e3bbad0a67f316f428f784e4a903e2e2f519a56e474ab9d28a943dc372deba3e02e
+    - Bw1DV2xg9JR6EbqP4km9
+    - 54fcdcb6908e5fa6399f92ddd9cddf5b28d0ae26c50616548378bfa28bde927a2149f3579f7b8b354c5af5f7aa104a654589a06b289f7925e82ef45edbd17943
+    - C5mjhOgnQuYHmpjvJrWp
+    - "3"
+    - Employer
+    - true
+    - "2009-10-20T08:28:04+07:00"
+    - "2010-01-19T19:35:02+07:00"
+  - - "6"
+    - worksource@worksource.com
+    - 49f541abf79634d635ddfddef3505f838adbf6d4a10a2801fc2637277e84cc433a4c24a2886714cb1254e714f85888f7795fa1e7ddca059f1b835340682dea58
+    - 3I7K54WTb14aK7f4NTb-
+    - 575fe185f648e442090e84723faf1ed2a0cf83de1b50fc1365cde13f86aab483c0914b417cdc7fe24cec9150bc12b7297fe5d8b7fcb685ffd21dc19f282f781c
+    - hJnHQvBp3wUc-kBrpClB
+    - "4"
+    - Employer
+    - true
+    - "2009-10-20T08:32:58+07:00"
+    - "2009-10-20T08:32:58+07:00"
+  - - "7"
+    - szechuan@szechuan.com
+    - aaa785d34fb663dcfb6256667e1f534e50474b65d24df016a76f348710c4b10f8d621dcdc08e07cba26b3a214f52f04efe5b22ba4ee21ba09c0cf2b99dfd6ee9
+    - AcW2OlyTlelI7QtXGAfr
+    - 1f92a54e4edb4c39bc7140c0816b309eb67122702151f4fcd9474bf9b7b03857770d53e69c26e4d2a27d36a5a4fd122f58e6899a13b5e8a0a65f551dba76798d
+    - 0PCa68Rjn_YIbund6Yqz
+    - "5"
+    - Employer
+    - true
+    - "2009-10-20T08:37:29+07:00"
+    - "2010-01-17T16:49:40+07:00"
+  - - "8"
+    - willy@willy.com
+    - f2994392a7245d4322934615fdf15a8e307efe93e0663f8471f69ee0f294ee58cc3531d9445315551aa3885ffa31179270b4f94872b3ab3023e917d275ff131b
+    - fx_VX0S1PDi6LqYyugYv
+    - 009dc5a67c48396febb2c4a371be5b4bed450b0cf919af9491f7e49e45c45cc29b0fa33a6b5cb41f1774e8263a0b31d2324c03a354a9862b374b7555c0872b03
+    - FOy9TDMEhqcVKwgIOsQu
+    - "2"
+    - JobSeeker
+    - true
+    - "2009-10-21T05:15:32+07:00"
+    - "2010-01-07T23:29:25+07:00"
+  - - "9"
+    - mary@mary.com
+    - f79e2e9948cdac6fba34b6b50ead1e61546e1af10d30252a0e23f6b5dbaac0a21c9ca6fec24f5f3939748998602268f9c185364347ccf900ca75f85a18d0d861
+    - tHnBNPtIsUKu5NG_Zsvo
+    - 848603262d43c789c98a2ecaf93fe4911ff52c33b5f0336588dfd8ff716b191adf7132b85774da29cc487ed52f588d1011c2a5b7a5f50b600241ad33341d09c2
+    - RmjwwqaDZg1GlqJndDYB
+    - "3"
+    - JobSeeker
+    - true
+    - "2009-10-21T05:25:31+07:00"
+    - "2010-01-05T10:06:20+07:00"
+  - - "10"
+    - trap@trap.com
+    - e2da9fa59ba17dd5007be8e5b3e5c52e675c9f59f823f80031a15f929b36fa82be8f60a13c5c55b7c65aba48f1b69b359cc80a01be4e4f9a2e4781bc08eaee04
+    - joSggHG0OuL0Xs5C-tm5
+    - 79f31cc30f8784aa8217d65ff1540dce0a72031caa538cb277c3759dcb11368d211799e96de662b57812e8fc00f78550c33dbbb336693097526243fb17e3a068
+    - xrBiE3sZ_P5hfAesigfO
+    - "4"
+    - JobSeeker
+    - true
+    - "2009-11-09T16:42:59+07:00"
+    - "2009-11-09T16:46:12+07:00"
+  - - "11"
+    - fan@fan.com
+    - 1fb317e8f9e9dbe538b5be68dd88a801712073aeef114872c4b75965b334b0621f7d3fddf995347667ee0f9fcc6e9430ce39c0cf7c59f7edbb3a2d57cf2ce190
+    - doqoLK_wiO6L7Zu2uTwj
+    - 6aa5bcfc43b2130ee5679ad67511a3d22d34a8ec38d98ed54a58ae9afc27cb8d3b8e0861c03611fe44afad7a7847182e00a84bfaf40acd11c8767c61164ede97
+    - sMR9aPofHEP3weCvYtsp
+    - "6"
+    - Employer
+    - true
+    - "2009-11-10T06:26:25+07:00"
+    - "2009-11-10T06:27:36+07:00"
+  - - "12"
+    - green@green.com
+    - a34ec42e12fd217f028c071bd97b897557522e172282defd94cf4d6d6fdee45df8d420c2316733f2afb60b4df6d34cd6cb025f24887b15a8e4c2d872b966dd7c
+    - cBu7hvfSbnCkGINY2VcA
+    - a9d26ab72d599e6b1deab7430b544b345fb09962c5c29d5f46d6975bb532aafc67dccdc8c7a2b54e2aba0759ba9c121791de26daceabb148b9dc0fcf6cee76f6
+    - eUzvOT3Iw9FFokSjgnsQ
+    - "7"
+    - Employer
+    - true
+    - "2009-11-10T06:33:49+07:00"
+    - "2009-11-10T06:33:49+07:00"
+  - - "13"
+    - mode@mode.com
+    - 2112a605ae17dcea66b20a02f566a254f82acb8653c8c1886a240d85ab2a02b74713bf63334f50caea7fe5f3631cf8850fd3d2d893d765e9b6a99aaf53d685d6
+    - aYKXvl9vz2JoaSDwAiCD
+    - 3d161427bf1f68f16da9d1abcea8f85ce296ca9c51e1a08948acff2c985c0c499122f904bff41ee3b675643a6863979b5a0ddfa280d5c68988b8847c6011dd84
+    - KItpmIX3i0iKuKp3Z7sA
+    - "1"
+    - Moderator
+    - true
+    - "2009-11-10T07:10:41+07:00"
+    - "2009-11-10T07:26:19+07:00"
+  - - "14"
+    - johny@johny.com
+    - c757ad8d766762d7c65862b025974803a0826f0dfe4f1bebaa098a3b3f72a9296b57c1843c9a170dc8bd3753070ad68dc9cd594ae8923f7fb53c02881ae97e3a
+    - SIUGVuSdG3nbM5_lp8UK
+    - 76aa5f84322b8ebbe002953405619a87d28ef51173b779864efb05f7f9e2824813e6cc0f6fd764452ce2a9553c99f8641e95aeb473332412c51e358db1279df3
+    - 1lqKAn2iCOVTjUzkuITx
+    - "5"
+    - JobSeeker
+    - true
+    - "2010-01-08T11:00:54+07:00"
+    - "2010-01-08T11:00:54+07:00"
+  - - "15"
+    - moderator2@demo.com
+    - 62194c85fbc4ad4bf5802cd88a8b8a9342da38f84b3a991f60366b4b2572de87b28852aca736a0301a3bbd0f6ac77437c4e432080e79e645515a3aae7acd8384
+    - A7a9mPdr_fGoz4Ec0nQ6
+    - 4fc07acccea24ccb1a4f8c4e49d197aa308e32e95c7cd7f78db0e15ef79f01d3ad609aa542265fb15ad17a11074a9fac81a0d5a4785b2cce2803621d7aa769d1
+    - cL8v0S77K0r4_k2nkc-D
+    - "2"
+    - Moderator
+    - true
+    - "2010-01-08T17:05:16+07:00"
+    - "2010-01-08T17:05:16+07:00"
+  - - "16"
+    - leah@leah.com
+    - 6b0d7775580fa269b0069b55286bc256c18d5d4d75fb65934890b70204f4fedcddc5d267820f437c184155a90edc00e42b7cb0c6890f0bb0e905a10f02bd317f
+    - JsXKKIwQklAEVVMIBLdn
+    - 61bdbe0066ae4b0901bb627eefbf1d57d2eed5b195cc7acb16771095e3cc6c22a2c6959f3471c71419cfb1fa63ff5fa307ee21762b1739677c555cf546488eb5
+    - 46bTWi6kCImvMEkyxOwo
+    - "6"
+    - JobSeeker
+    - true
+    - "2010-01-10T04:09:42+07:00"
+    - "2010-01-10T04:09:42+07:00"
+  - - "17"
+    - khw212@gmail.com
+    - eb98a39f2dd5cd5e2daa504f39621c3e87f6ef4a65e67508d8c7ff29729e7038e7ab26b0ae875487a97cffd14dd31c57ffaeb463f9359f424975f2aff7e9448d
+    - uvgGXJJanYQUMMdT-zA8
+    - 9a794f3524873e8a458771845a85ba741b18651a4831f2766e06c99266d1500cf5ea65acccde4a499d37f8f01628ad572c268769438c9a764a469e462b2f1fc7
+    - RtjAFrc4UInbbZ88U3Qo
+    - "8"
+    - Employer
+    - true
+    - "2010-01-15T07:39:51+07:00"
+    - "2010-01-22T06:28:40+07:00"
+  - - "18"
+    - kw@mychio.com
+    - 4b33d15b7e462aff36d3ac69cd81d8eeb5ec0552c748e045b478dfb369b5c2465f44d1532f041837283040796017a5e9bd129da24b1a69c028265b72721cf27a
+    - DIjplXMwHPdZ7_ht0ZxK
+    - 171435a26cdf89c4e188ee3ebc0f406d61c71a5c9c302797397a99ccf8518fc6be74ba84b04dec5ae40e5bc489acc3976f94f3b79411aaf426dddc8d5a2b2d5d
+    - ZRWLgtt0CEUyL_JwA8Vk
+    - "7"
+    - JobSeeker
+    - true
+    - "2010-01-17T17:00:57+07:00"
+    - "2010-01-17T17:02:05+07:00"
+  - - "19"
+    - lola@lola.com
+    - e88e8c38940d0213c0555e12336c441a94e4ba15f6f70e0022b9e7730b216ab86b046da16fd72d4c9ac136e8b9452109594d2be018aabda9a0f7f29707573125
+    - RKBuHzcbT8Yt59zmCWLJ
+    - 3dbc3a1096fde578faae33955dff755b1473d7e3cc5d7cc5fe008ddac30060ca2966a3c429ebe32a51d8911ae52c5bb2b74d4887a9f42881730b538ad7bac556
+    - M2kmm4MaQmTi3cHSYZPT
+    - "8"
+    - JobSeeker
+    - true
+    - "2010-01-19T07:58:19+07:00"
+    - "2010-01-19T07:58:19+07:00"
+  - - "22"
+    - employer3@demo.com
+    - e5dd41948c0a54b424e8b02e5955f54b4aa7085204cf02f3a0fa2d7d21145961247dd7595a8d667103a693d28a4705e6b8d5d7b4ace9fc00b04b5de970db77ba
+    - tjQEHnDfVCavPel6p-SS
+    - 6ef4d1ab403531281d05551ebe919957dafbf1f0fb27385c40a5ca98dd3335f33cbdea89aaba3314488e09d2ee1e970f969a329816a64cfb91dbbbc447343531
+    - bbaL9gqLLnB-Zz4401JC
+    - "11"
+    - Employer
+    - false
+    - "2010-01-19T16:59:47+07:00"
+    - "2010-01-19T17:17:49+07:00"
+  - - "23"
+    - seeker2@demo.com
+    - 8c62675abc95db6625687b229ecfc273fdb2bc6381e131faae92445f1996e9061238688d3ce684028aae00e859ce67edc2972ede6d5468df83194e8602491efb
+    - roPNMe-X8LaMZ2QuwlC2
+    - 74727281a8a73d482656545b97f21f07d8258629f0fdb5463c538692e3a2e2211fa6985939dfe82418d9beffee4bc239488a02899363ea49bb1fa43dd5c5d356
+    - W3jPd8W9pyRKVBmRoHuY
+    - "9"
+    - JobSeeker
+    - true
+    - "2010-01-19T17:04:01+07:00"
+    - "2010-01-19T17:04:01+07:00"
+  - - "24"
+    - wynst.uei@gmail.com
+    - 2fd773e01a9396db139201b823cdfdfdb0297dfe90055f40d1ccba2982a7fe5f3af11786e0d7b50ecafddbaa154f042251835c9d5edf013a9cf8bdac86ceeee7
+    - QAYkpWF_WOovbOXjsA8u
+    - 973aee4d3530798963e0a73e6d4cc116e1976190dbcd29afad3cfc372ae4e061107035805629e0eab54d9d0f668daff27eef89bf7606aa066508312c9e9efe84
+    - Pt7Iy2m4X9yyLk3fTo2G
+    - "10"
+    - JobSeeker
+    - true
+    - "2010-01-22T02:47:16+07:00"
+    - "2010-01-22T02:47:16+07:00"
+  - - "25"
+    - david@sunsky.com
+    - 0c3b87cbeeaad34634ac63bf8e461abdc8758efb44d1e58d46b687559b524c71148aaa93ee240925f7b72955b5953fa391046f4c399d44f0b015e0789f02af79
+    - h65XlBuEwEJLywD_ivZJ
+    - cc80ecb60820427bb581bc37f055377ac6663c6cb703cf7823c1008620b09aa1015c13c18b607c8fad851f7c78a91be4db223be568a12410fb762c837c8b464a
+    - 7BO5RrsNm6ia0PRqVf2A
+    - "12"
+    - Employer
+    - false
+    - "2010-01-22T06:43:34+07:00"
+    - "2010-01-22T06:43:34+07:00"
+  - - "26"
+    - wang@sunsky.com
+    - 4ba499243ea210db9e94775c0c5130a153f91fad3ad222be0a356c155ba1725cdc40a8917f26da15458ecd85004f2e38e3e820dea7d0fc79936d67d92a9a854d
+    - jVoegnUr5D8zBF8JJMVJ
+    - b03143110827fed8c158ef3a349d061fcbf4cc71bc079db6f5ba45ee5e894174553d7e32c11298a7721fd7446f233291889ee02584c18ce6fcf417a5e04bd285
+    - L8BxtNP2m0bTMSlVzKTI
+    - "11"
+    - JobSeeker
+    - true
+    - "2010-01-22T06:47:27+07:00"
+    - "2010-01-22T06:47:27+07:00"

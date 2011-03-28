@@ -1,0 +1,491 @@
+/****************************************************************/
+/*   Design:   Multiflex-4.2 / Layout-4                         */
+/*   File:     Global layout structure                          */
+/*--------------------------------------------------------------*/
+/*   Design:   www.1234.info                                    */
+/*   Date:     January 20, 2008                                 */
+/*--------------------------------------------------------------*/
+/*   License:  Fully open source without restrictions.          */
+/*             Please keep footer credits with the words        */
+/*             "Design by 1234.info". Thank you!                */
+/****************************************************************/
+
+/*-------------------------------------------------------------------------------*/
+/* If you are interested in adopting the new header in Multiflex-4 for your      */
+/* existing website using Multiflex-3, here are the instructions how to do it:   */
+/*                                                                               */
+/* A. CSS Code                                                                   */
+/*    1. Replace your current Multiflex-3 CSS setup file with this file.         */
+/*                                                                               */
+/* B. HTML Code                                                                  */
+/*    1. Open the Multiflex-4 HTML file corresponding to your Multiflex-3 file.  */
+/*    2. Copy the indicated HTML lines as instructed in the code.                */
+/*    3. Paste the copied HTML lines into your Multiflex-3 file.                 */
+/*                                                                               */
+/* C. IMAGE files                                                                */
+/*    1. Copy the the following five files from the Multiflex-4 image directory  */
+/*       to your current image directory for Multiflex-3:                        */
+/*       - "bg_head_corner_topleft_25px.gif"                                     */ 
+/*       - "bg_head_corner_topright_25px.gif"                                    */
+/*       - "flag_greatbritain.png"                                               */
+/*       - "flag_germany.png"                                                    */
+/*       - "flag_sweden.png"                                                     */
+/*                                                                               */
+/* D. Your new header is now ready for operation!                                */
+/*-------------------------------------------------------------------------------*/
+
+/************/
+/*  GLOBAL  */
+/************/
+
+/* NON-HEADER */
+*{padding:0; margin:0;}
+ body {font-size:62.5%; background-color:rgb(255,255,255); font-family:verdana,arial,sans-serif;} /*Font-size: 1.0em = 10px when browser default size is 16px*/
+.page-container {width:960px; margin:0px auto; margin-top:10px; margin-bottom:10px; font-size:1.0em;}
+.main {clear:both; width:954px; padding-bottom:30px; border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); background:transparent url(../images/bg_main.gif) top left repeat-y;}
+.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:200px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/; background:rgb(245,245,245);}
+.main-content {display:inline; /*Fix IE floating margin bug*/; float:left; width:500px; margin:0 0 0 30px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.main-subcontent {display:inline /*Fix IE floating margin bug*/; float:right; width:185px; margin:0 15px 0 0; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.footer {clear:both; width:954px; padding:1.0em 0 1.0em 0; border-top:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); border-bottom:solid 3px rgb(175,175,175); background:rgb(225,225,225); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+
+/* HEADER */
+.header {width:960px;}
+.header-top {width:954px; height:90px; border-top:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); margin-top:10px; background:rgb(235,235,235); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.header-bottom {width:954px; border-bottom:solid 3px rgb(175,175,175); border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175); border-top:solid 1px rgb(175,175,175);}
+.header-breadcrumbs {clear:both; width:954px; padding:1.0em 0 1.5em 0; border-left:solid 3px rgb(175,175,175); border-right:solid 3px rgb(175,175,175);}
+.header .round-border-topleft {width:25px; height:25px; position:absolute; z-index:100; background:url(../images/bg_head_corner_topleft_25px.gif) no-repeat; margin-top:-3px; margin-left:-3px;}
+.header .round-border-topright {width:25px; height:25px; position:absolute; z-index:100; background:url(../images/bg_head_corner_topright_25px.gif) no-repeat; margin-top:-3px; margin-left:932px;}
+
+/*************/
+/*  2. HEAD  */
+/*************/
+.sitelogo {width:177px; height:65px; position:absolute; z-index:1; margin:18px 0 0 15px; background:url(../images/logo.gif);}
+.sitename {width:300px; height:45px; position:absolute; z-index:1; margin:23px 0 0 75px; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}
+.sitename h1 {font-weight:normal; font-size:240%;}
+.sitename h2 {margin:-2px 0 0 0; color:rgb(125,125,125); font-weight:normal; font-size:120%;}
+.sitename a{text-decoration:none; color:rgb(125,125,125);}
+.sitename a:hover {text-decoration:none; color:rgb(125,125,125);}
+
+.nav0 {width:350px; position:absolute; z-index:2; margin:25px 0 0 0; margin-left:610px !important /*Non-IE6*/; margin-left:613px /*IE6*/;}
+.nav0 ul {float:right; padding:0 20px 0 0;}
+.nav0 li {display:inline; list-style:none;}
+.nav0 li a {padding:0 0 0 3px;}
+.nav0 a:hover {text-decoration:none;}
+.nav0 a img {height:20px; border:none;}
+
+.nav1 {width:350px; position:absolute; z-index:3; margin:55px 0 0 610px;}
+.nav1 ul {float:right; padding:0 15px 0 0; font-weight:normal;}	
+.nav1 li {display:inline; list-style:none;}
+.nav1 li a {display:block; float:left; padding:2px 5px 2px 5px; color:rgb(125,125,125); text-decoration:none; font-size:110%;}
+.nav1 a:hover {text-decoration:none; color:rgb(50,50,50);}
+
+/*Drop-down menu*/
+.nav2 {white-space:nowrap /*IE hack*/; float:left; width:954px; background:rgb(225,225,225); color:rgb(100,100,100); font-size:130%;} /*Color navigation bar normal mode*/
+.nav2 ul {list-style-type:none;}
+.nav2 ul li {float:left; z-index:auto !important /*Non-IE6*/; z-index:1000 /*IE6*/; border-right:solid 1px rgb(175,175,175);}
+.nav2 ul li a {float:none !important /*Non-IE6*/; float:left /*IE-6*/; display:block; height:2.1em; line-height:2.1em; padding:0 16px 0 16px; text-decoration:none; font-weight:normal; color: rgb(100,100,100);}
+.nav2 ul li ul {display:none; border:none;}
+
+/*Non-IE6 hovering*/
+.nav2 ul li:hover {position:relative;} /*Sylvain IE hack*/
+.nav2 ul li:hover a {background-color:rgb(215,215,215); text-decoration:none;} /*Color main cells hovering mode*/
+.nav2 ul li:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:2.0em; margin-top:0.1em; left:0;}
+.nav2 ul li:hover ul li a {white-space:normal; display:block; width:10.0em; height:auto; line-height:1.3em; margin-left:-1px; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(100,100,100);} /*Color subcells normal mode*/
+.nav2 ul li:hover ul li a:hover {background-color:rgb(215,215,215); text-decoration:none;} /*Color subcells hovering mode*/
+
+/*IE6 hovering*/
+.nav2 table {position:absolute; top:0; left:-1px; border-collapse:collapse;}
+.nav2 ul li a:hover {position:relative /*Sylvain IE hack*/; z-index:1000 /*Sylvain IE hack*/; background-color:rgb(215,215,215); text-decoration:none;} /*Color main cells hovering mode*/
+.nav2 ul li a:hover ul {display:block; width:10.0em; position:absolute; z-index:999; top:2.1em; t\op:2.0em; left:0; marg\in-top:0.1em;}
+.nav2 ul li a:hover ul li a {white-space:normal; display:block; w\idth:10.0em; height:1px; line-height:1.3em; padding:4px 16px 4px 16px; border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175); background-color:rgb(240,240,240); font-weight:normal; color:rgb(50,50,50);} /*Color subcells normal mode*/
+.nav2 ul li a:hover ul li a:hover {background-color:rgb(215,215,215); text-decoration:none;} /*Color subcells hovering mode*/
+
+.header-breadcrumbs ul {float:left; width:560px; list-style:none; padding:0 0 0 15px; font-family:verdana,arial,sans-serif;}
+.header-breadcrumbs ul li {display:inline; padding:0 0 0 10px; background:transparent url(../images/bg_bullet_arrow.gif) no-repeat 0 50%; font-weight:bold; color:rgb(125,125,125); font-size:100%;}
+.header-breadcrumbs ul a {color:rgb(70,122,167); text-decoration:none;}
+.header-breadcrumbs ul a:hover {color:rgb(42,90,138); text-decoration:underline;}
+
+.header-breadcrumbs .searchform {float:right; width:285px; padding:0 17px 0px 0px !important /*Non-IE6*/; padding:0 12px 0px 0px /*IE6*/;}
+.header-breadcrumbs .searchform form fieldset {float:right; border:none;}
+.header-breadcrumbs .searchform input.field {width:10.0em; padding:0.2em 0 0.2em 0; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:120%; }
+.header-breadcrumbs .searchform input.button {width:3.0em; padding:1px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:120%;}
+.header-breadcrumbs .searchform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+/******************/
+/*  MAIN SECTION  */
+/******************/
+
+/* MAIN NAVIGATION */
+.main-navigation .round-border-topright {width:10px; height:10px; position:absolute; z-index:100; margin:0 0 0 190px; background:url(../images/bg_corner_topright.gif) no-repeat;}
+
+/* MAIN CONTENT */
+.column1-unit {width:490px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column2-unit-left {float:left; width:225px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column2-unit-right {float:right; width:225px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column3-unit-left {float:left; width:137px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+.column3-unit-middle {float:left; width:137px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/; margin-left:40px;}
+.column3-unit-right {float:right; width:137px; margin-bottom:10px !important /*Non-IE6*/; margin-bottom:5px /*IE6*/;}
+
+/* MAIN SUBCONTENT */
+.subcontent-unit-border {width:183px; margin:0 0 2.0em 0; padding:0 0 5px 0; border:solid 1px rgb(190,190,190); background:rgb(235,235,235);}
+.subcontent-unit-border-green {width:183px; margin:0 0 2.5em 0; padding:0 0 10px 0; border:solid 1px rgb(160,214,81); background-color:rgb(217,239,185);}
+.subcontent-unit-border-blue  {width:183px; margin:0 0 2.5em 0; padding:0 0 10px 0; border:solid 1px rgb(137,170,214); background-color:rgb(213,225,240);}
+.subcontent-unit-border-orange {width:183px; margin:0 0 2.5em 0px; padding:0 0 10px 0; border:solid 1px rgb(232,177,13); background-color:rgb(248,224,150);}
+
+.subcontent-unit-noborder {width:185px; margin:0 0 2.5em 0; padding:0 0 10px 0; background:rgb(235,235,235);}
+.subcontent-unit-noborder-green {width:185px; margin:0 0 2.5em 0; padding:0 0 10px 0; background-color:rgb(217,239,185);}
+.subcontent-unit-noborder-blue  {width:185px; margin:0 0 2.5em 0; padding:0 0 10px 0; background-color:rgb(213,225,240);}
+.subcontent-unit-noborder-orange {width:185px; margin:0 0 2.5em 0; padding:0 0 10px 0; background-color:rgb(248,224,150);}
+
+.round-border-topleft {width:10px; height:10px; position:absolute; z-index:100; background:url(../images/bg_corner_topleft.gif) no-repeat; margin-top:-1px; margin-left:-1px;}
+.round-border-topright {width:10px; height:10px; position:absolute; z-index:100; background:url(../images/bg_corner_topright.gif) no-repeat; margin-top:-1px; margin-left:174px;}
+.round-noborder-topleft {width:10px; height:10px; position:absolute; z-index:100; background:url(../images/bg_corner_topleft.gif) no-repeat; margin-top:0px; margin-left:0px;}
+.round-noborder-topright {width:10px; height:10px; position:absolute; z-index:100; background:url(../images/bg_corner_topright.gif) no-repeat; margin-top:0px; margin-left:175px;}
+
+/********************/
+/*  FOOTER SECTION  */
+/********************/
+.footer p {line-height:1.3em; text-align:center; color:rgb(125,125,125); font-weight:bold; font-size:110%;}
+.footer p.credits {font-weight:normal;}
+.footer a {text-decoration:underline; color:rgb(125,125,125);}
+.footer a:hover {text-decoration:none; color:rgb(0,0,0);}
+.footer a:visited {color:rgb(0,0,0);}
+
+/******************/
+/*  CLEAR FLOATS  */
+/******************/
+.page-container:after, .header:after, .header-bottom:after, .header-breadcrumbs:after, .main:after, .main-navigation:after, .main-content:after, .main-content div:after, .main-subcontent:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.column1-unit:after, .column2-unit-left:after, .column2-unit-right:after, .column3-unit-left:after, .column3-unit-middle:after, .column3-unit-right:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.subcontent-unit-border:after, .subcontent-unit-noborder:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.subcontent-unit-border-blue:after, .subcontent-unit-border-green:after, .subcontent-unit-border-orange:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.subcontent-unit-noborder-blue:after, .subcontent-unit-noborder-green:after, .subcontent-unit-noborder-orange:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+ p:after {content:"."; display:block; height:0; /*clear:both*/; visibility:hidden;}
+.footer:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clear-contentunit {clear:both; width:490px; height:0.1em; border:none; background:rgb(210,210,210); color:rgb(210,210,210);}
+
+/********************************/
+/*  PRINTING and MISCELLANEOUS  */
+/********************************/
+@media print {.header-top {width:954px; height:80px; background:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+@media print {.header-breadcrumbs {width:954px; background:transparent;}}
+@media print {.nav2 {float:left; width:954px; border:none; background:rgb(240,240,240); color:rgb(75,75,75); font-size:1.0em; font-size:130%;}} /*Color navigation bar normal mode*/
+@media print {.main {clear:both; width:954px; padding-bottom:30px; background:transparent;}}
+@media print {.main-navigation {display:inline /*Fix IE floating margin bug*/; float:left; width:199px; border-right:solid 1px rgb(200,200,200); border-bottom:solid 1px rgb(200,200,200); background-color:rgb(240,240,240); overflow:visible !important /*Firefox*/; overflow:hidden /*IE*/;}}
+@media print {.footer {clear:both; width:954px; height:3.7em; padding:1.1em 0 0; background:rgb(240,240,240); font-size:1.0em; overflow:visible !important /*Firefox*/; overflow:hidden /*IE6*/;}}
+
+
+/****************************************************************/
+/*   Design:   Multiflex-4.2 / Layout-4                         */
+/*   File:     Text formats                                     */
+/*--------------------------------------------------------------*/
+/*   Design:   www.1234.info                                    */
+/*   Date:     January 20, 2008                                 */
+/*--------------------------------------------------------------*/
+/*   License:  Fully open source without restrictions.          */
+/*             Please keep footer credits with the words        */
+/*             "Design by 1234.info". Thank you!                */
+/****************************************************************/
+
+/******************/
+/*  MAIN SECTION  */
+/******************/
+
+/* MAIN NAVIGATION */
+.nav3-grid {width:199px; border-bottom:solid 1px rgb(200,200,200);}
+.nav3-grid dt a, .nav3-grid dt a:visited {display:block; min-height:2.0em /*Non-IE6*/; height:auto !important; height:2.0em /*IE6*/; line-height:2.0em; padding:0px 10px 0px 20px;  border-top: solid 1px rgb(200,200,200); text-decoration:none; color:rgb(70,122,167); font-weight:bold; font-size:120%;}
+.nav3-grid dd a, .nav3-grid dd a:visited {display:block; min-height:1.7em /*Non-IE6*/; height:auto !important; height:1.7em /*IE6*/; line-height:1.7em; padding:0px 10px 0px 40px; border:none; font-weight:normal; text-decoration:none; color:rgb(70,122,167); font-size:120%;}
+.nav3-grid dt a:hover, .nav3-grid dd a:hover {background-color:rgb(225,225,225); /*background-color:rgb(143,174,215) /*For blue background*/; color:rgb(42,90,138); text-decoration:none;}
+
+.nav3-bullet {width:170px; margin:10px 0 0 20px;}
+.nav3-bullet dt a, .nav3-bullet dt a:visited {line-height:2.0em; padding:0 0 0 10px; background:url(../images/bg_bullet_full_1.gif) no-repeat 0px 50%; text-decoration:none; color:rgb(70,122,167); font-weight:bold; font-size:120%;}
+.nav3-bullet dd a, .nav3-bullet dd a:visited {line-height:1.7em; margin:0 0 0 15px; padding:0 0 0 10px; background:url(../images/bg_bullet_half_1.gif) no-repeat 0px 50%; text-decoration:none; color:rgb(70,122,167); font-weight:normal; font-size:120%;}
+.nav3-bullet dt a:hover {background:url(../images/bg_bullet_full_2.gif) no-repeat 0px 50%; text-decoration:underline; color:rgb(42,90,138);}
+.nav3-bullet dd a:hover {background:url(../images/bg_bullet_half_2.gif) no-repeat 0px 50%; text-decoration:underline; color:rgb(42,90,138);}
+
+.nav3-nobullet {width:170px; margin:10px 0 0 20px;}
+.nav3-nobullet dt a, .nav3-nobullet dt a:visited {line-height:2.0em; text-decoration:none; color:rgb(70,122,167); font-weight:bold; font-size:120%;}
+.nav3-nobullet dd a, .nav3-nobullet dd a:visited {line-height:1.7em; margin:0 0 0 15px; text-decoration:none; color:rgb(70,122,167); font-weight:normal; font-size:120%;}
+.nav3-nobullet dt a:hover, .nav3-nobullet dd a:hover {text-decoration:underline; color:rgb(42,90,138);}
+
+.main-navigation .loginform {width:160px; margin:-10px 20px 0 20px;}
+.main-navigation .loginform p {clear:both; margin:0; padding:0;}
+.main-navigation .loginform fieldset {width:160px; border:none;}
+.main-navigation .loginform label.top {float:left; width:125px; margin:0 0 2px 0; font-size:110%;}
+.main-navigation .loginform label.right {float:left; width:125px; margin:5px 0 0 0; padding:0 0 0 3px; /*IE6*/; font-size:110%;}
+.main-navigation .loginform input.field {width:158px; margin:0 0 5px 0; padding:0.1em 0 0.2em 0 !important /*Non-IE6*/; padding:0.2em 0 0.3em 0 /*IE6*/; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+.main-navigation .loginform input.checkbox {float:left; margin:5px 0 0 0 !important /*Non-IE6*/; margin:2px 0 0 -3px /*IE6*/; border:none;}
+.main-navigation .loginform input.button {float:left; width:5.0em; margin:10px 0 5px 0; padding:1px; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:110%;}
+.main-navigation .loginform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+.main-navigation .searchform {width:160px; margin:0 20px 0 20px;}
+.main-navigation .searchform p {clear:both; margin:0; padding:0;}
+.main-navigation .searchform fieldset {border:none;}
+.main-navigation .searchform input.field {float:left; width:158px; padding:0.1em 0 0.2em 0 !important /*Non-IE6*/; padding:0.2em 0 0.3em 0 /*IE6*/; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:120%;}
+.main-navigation .searchform input.button {float:left; width:3.0em; margin-top: 0.5em; padding:1px; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:120%;}
+.main-navigation .searchform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+.main-navigation h1.first {clear:both; margin:0px; padding:4px 20px 3px 20px; background-color:rgb(190,190,190); /*background-color:rgb(137,170,214)/*For blue background*/; font-family:"trebuchet ms",arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:150%;}
+.main-navigation h1 {clear:both; margin:30px 0 20px 0; padding:4px 20px 3px 20px; background:rgb(190,190,190); font-family:"trebuchet ms",arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:150%;}
+.main-navigation h2 {clear:both; margin:20px 10px 10px 20px; font-family:"trebuchet ms",arial,sans-serif; color:rgb(100,100,100); font-weight:bold; font-size:150%;}
+.main-navigation h3 {clear:both; margin:10px 10px 5px 20px; color:rgb(80,80,80); font-weight:bold; font-size:110%;} /* Note: h2 not existent, to make identical to formats for main-navigation for easier exchange */
+.main-navigation p {clear:both; margin:0 10px 10px 20px; color:rgb(80,80,80); line-height:1.3em; font-size:110%;}
+.main-navigation p.center {text-align:center;}
+.main-navigation p.right {text-align:right;}
+
+.main-navigation ul {list-style:none; margin:0.5em 10px 1.0em 20px;}
+.main-navigation ul li {margin:5px 0 0.2em 2px; padding:0px 0px 0 11px; background:url(../images/bg_bullet_full_1.gif) no-repeat 0 0.4em; line-height:1.2em; font-size:110%;}
+.main-navigation ol {margin:0.5em 10px 1.0em 40px !important /*Non-IE6*/; margin:0.5em 10px 1.0em 45px /*IE6*/;}
+.main-navigation ol li {list-style-position:outside; margin:0 0 0.4em 0; font-size:110%;}
+
+/* MAIN CONTENT */
+.main-content h1.pagetitle {margin:0 0 0.4em 0; padding:0 0 2px 0; border-bottom:solid 7px rgb(225,225,225); font-family:"trebuchet ms",arial,sans-serif; color:rgb(100,100,100); font-weight:bold; font-size:220%;}
+.main-content h1.block {clear:both; margin:1.0em 0 0em 0; padding:2px 0 2px 2px; background:rgb(190,190,190); font-family:"trebuchet ms",arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:220%;}
+.main-content h1 {clear:both; margin:1.0em 0 0.5em 0; font-family:"trebuchet ms",arial,sans-serif; color:rgb(80,80,80); font-weight:normal; font-size:210%;}
+.main-content h2 {clear:both; margin:1.0em 0 0.5em 0; font-family:"trebuchet ms",arial,sans-serif; color:rgb(80,80,80); font-weight:normal; font-size:170%;}
+.main-content h3 {clear:both; margin:-1.0em 0 0.5em 0; font-family:"trebuchet ms",arial,sans-serif; color:rgb(125,125,125); font-weight:normal; font-size:130%;}
+.main-content h1.side {clear:none;}
+.main-content h2.side {clear:none;}
+.main-content h3.side {clear:none;}
+
+.main-content h4 {margin:1.5em 0 1.0em 0; color:rgb(80,80,80); font-family:"trebuchet ms",arial,sans-serif; font-weight:normal; font-size:170%;}
+.main-content h5 {margin:1.5em 0 1.0em 0; color:rgb(80,80,80); font-family:"trebuchet ms",arial,sans-serif; font-size:140%;}
+.main-content h6 {margin:1.2em 0 0.2em 0; color:rgb(80,80,80); font-weight:bold; font-size:120%;}
+.main-content p {margin:0 0 1.0em 0; line-height:1.5em; font-size:120%;}
+.main-content p.center {text-align:center;}
+.main-content p.right {text-align:right;}
+.main-content p.details {clear:both; margin:-0.25em 0 1.0em 0; line-height:1.0em; font-size:110%;}
+.main-content blockquote {clear:both; margin:0 30px 0.6em 30px; font-size:90%;}
+
+.main-content table {clear:both; width:400px; margin:2.0em 0 0.2em 20px; table-layout: fixed; border-collapse:collapse; empty-cells:show; background-color:rgb(233,232,244);}
+.main-content table th.top {height:3.5em; padding:0 7px 0 7px; empty-cells:show; background-color:rgb(175,175,175); text-align:left; color:rgb(255,255,255); font-weight:bold; font-size:110%;}
+.main-content table th {height:3.0em; padding:2px 20px 2px 7px; border-left:solid 2px rgb(255,255,255); border-right:solid 2px rgb(255,255,255); border-top:solid 2px rgb(255,255,255); border-bottom:solid 2px rgb(255,255,255); background-color:rgb(225,225,225); text-align:left; color:rgb(80,80,80); font-weight:bold; font-size:110%;}
+.main-content table td {height:3.0em; padding:2px 7px 2px 7px; border-left:solid 2px rgb(255,255,255); border-right:solid 2px rgb(255,255,255); border-top:solid 2px rgb(255,255,255); border-bottom:solid 2px rgb(255,255,255); background-color:rgb(225,225,225); text-align:left; font-weight:normal; color:rgb(80,80,80); font-size:110%;}
+p.caption {clear:both; margin:0.5em 0 2.0em 20px; text-align:left; color:rgb(80,80,80); font-size:110%;}
+
+.main-content ul {list-style:none; margin:0.5em 0 1.0em 0;}
+.main-content ul li {margin:0 0 0.2em 2px; padding:0 0 0 12px; background:url(../images/bg_bullet_full_1.gif) no-repeat 0 0.5em; line-height:1.4em; font-size:120%;}
+.main-content ol {margin:0.5em 0 1.0em 20px !important /*Non-IE6*/; margin:0.5em 0 1.0em 25px /*IE6*/;}
+.main-content ol li {list-style-position:outside; margin:0 0 0.2em 0; line-height:1.4em; font-size:120%;}
+
+.contactform {width:418px; margin:2.0em 0 0 0; padding:10px 10px 0 10px; border:solid 1px rgb(200,200,200); background-color:rgb(240,240,240);}
+.contactform fieldset {padding:20px 0 0 0 !important /*Non-IE6*/; padding:0 /*IE6*/; margin:0 0 20px 0; border:solid 1px rgb(220,220,220);}
+.contactform fieldset legend {margin:0 0 0 5px !important /*Non-IE*/; margin:0 0 20px 5px /*IE6*/; padding:0 2px 0 2px; color:rgb(80,80,80); font-weight:bold; font-size:130%;}
+.contactform label.left {float:left; width:100px; margin:0 0 0 10px; padding:2px; font-size:110%;}
+.contactform select.combo {width:175px; padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+.contactform input.field {width:275px; padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+.contactform textarea {width:275px; padding:2px; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+.contactform input.button {float:right; width:9.0em; margin-right:20px; padding:1px !important /*Non-IE6*/; padding:0 /*IE6*/; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:110%;}
+.contactform input.button:hover {cursor: pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+/* MAIN SUBCONTENT */
+.main-subcontent h1 {clear:both; margin:0 0 10px 0; padding:4px 10px 3px 10px; background-color:rgb(190,190,190); font-family:"trebuchet ms",arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:140%;}
+.main-subcontent h1.green {clear:both; margin:0 0 5px 0; padding:4px 10px 3px 10px; background-color:rgb(160,214,81); font-family:"trebuchet ms",verdana,arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:140%;}
+.main-subcontent h1.blue {clear:both; margin:0 0 5px 0; padding:4px 10px 3px 10px; background-color:rgb(137,170,214); font-family:"trebuchet ms",verdana,arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:140%;}
+.main-subcontent h1.orange {clear:both; margin:0 0 5px 0; padding:4px 10px 3px 10px; background-color:rgb(232,177,13); font-family:"trebuchet ms",verdana,arial,sans-serif; color:rgb(255,255,255); font-weight:bold; font-size:140%;}
+ /* Note: h2 non-existent, to make HTML-code interchangeable between 'main-navigation' and 'main-subcontent' */
+.main-subcontent h3 {clear:both; margin:1.0em 10px 0.5em 10px; color:rgb(80,80,80); font-weight:bold; font-size:110%;}
+.main-subcontent p {clear:both; margin:0 10px 1.0em 10px; color:rgb(80,80,80); line-height:1.3em; font-size:110%;}
+.main-subcontent p.center {text-align:center;}
+.main-subcontent p.right {text-align:right;}
+
+.main-subcontent ul {list-style:none; margin:0.5em 10px 1.0em 10px;}
+.main-subcontent ul li {margin:5px 0 0.2em 2px; padding:0 0 0 11px; background:url(../images/bg_bullet_full_1.gif) no-repeat 0 0.4em; line-height:1.2em; font-size:110%;}
+.main-subcontent ol {margin:0.5em 10px 1.0em 30px !important /*Non-IE6*/; margin:0.5em 10px 1.0em 35px /*IE6*/;}
+.main-subcontent ol li {list-style-position:outside; margin:0 0 0.4em 0; font-size:110%;}
+
+.main-subcontent .loginform {width:160px; margin:0 10px 0 10px;}
+.main-subcontent .loginform p {clear:both; margin:0; padding:0;}
+.main-subcontent .loginform fieldset {width:160px; border:none;}
+.main-subcontent .loginform label.top {float:left; width:125px; margin:0 0 2px 0; font-size:110%;}
+.main-subcontent .loginform label.right {float:left; width:125px; margin:5px 0 0 0; padding:0 0 0 3px; /*IE6*/; font-size:110%;}
+.main-subcontent .loginform input.field {width:158px; margin:0 0 5px 0; padding:0.1em 0 0.2em 0 !important /*Non-IE6*/; padding:0.2em 0 0.3em 0 /*IE6*/; border:solid 1px rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:110%;}
+.main-subcontent .loginform input.checkbox {float:left; margin:5px 0 0 0 !important /*Non-IE6*/; margin:2px 0 0 -3px /*IE6*/; border:none;}
+.main-subcontent .loginform input.button {float:left; width:5.0em; margin:10px 0 5px 0; padding:1px; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:110%;}
+.main-subcontent .loginform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+.main-subcontent .searchform {width:160px; margin:0 10px 0 10px;}
+.main-subcontent .searchform fieldset {border:none;}
+.main-subcontent .searchform input.field {float:left; width:158px; padding:0.1em 0 0.2em 0 !important /*Non-IE6*/; padding:0.2em 0 0.3em 0 /*IE6*/; border:1px solid rgb(200,200,200); font-family:verdana,arial,sans-serif; font-size:120%;}
+.main-subcontent .searchform input.button {float:left; width:3.0em; margin-top: 0.5em; padding:1px; background:rgb(230,230,230); border:solid 1px rgb(150,150,150); text-align:center; font-family:verdana,arial,sans-serif; color:rgb(150,150,150); font-size:120%;}
+.main-subcontent .searchform input.button:hover {cursor:pointer; border:solid 1px rgb(80,80,80); background:rgb(220,220,220); color:rgb(80,80,80);}
+
+/********************/
+/*  COMMON CLASSES  */
+/********************/
+.main img {clear:both; float:left; margin:3px 10px 7px 0; padding:1px; border:1px solid rgb(150,150,150);}
+.main img.center {clear:both; float:none; display:block; margin:0 auto; padding:1px; border:1px solid rgb(150,150,150);}
+.main img.right {clear:both; float:right; margin:3px 0 7px 10px; padding:1px; border:1px solid rgb(150,150,150);}
+
+.main a {color:rgb(70,122,167); font-weight:bold; text-decoration:none;}
+.main-content h1 a {color:rgb(70,122,167); font-weight:normal; text-decoration:none;}
+.main a:hover {color:rgb(42,90,138); text-decoration:underline;}
+.main a:visited {color:rgb(42,90,138);}
+
+.main a img {border:solid 1px rgb(150,150,150);}
+.main a:hover img {border:solid 1px rgb(220,220,220);}
+
+
+/* -------------------------------------------------------------------------------------------------
+
+It's *strongly* suggested that you don't modify this file.  Instead, load a new stylesheet after
+this one in your layouts (eg formtastic_changes.css) and override the styles to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+This stylesheet forms part of the Formtastic Rails Plugin
+(c) 2008 Justin French
+
+--------------------------------------------------------------------------------------------------*/
+
+
+/* NORMALIZE AND RESET - obviously inspired by Yahoo's reset.css, but scoped to just form.formtastic
+--------------------------------------------------------------------------------------------------*/
+form.formtastic, form.formtastic ul, form.formtastic ol, form.formtastic li, form.formtastic fieldset, form.formtastic legend, form.formtastic input, form.formtastic textarea, form.formtastic select, form.formtastic p { margin:0; padding:0; }
+form.formtastic fieldset { border:0; }
+form.formtastic em, form.formtastic strong { font-style:normal; font-weight:normal; }
+form.formtastic ol, form.formtastic ul { list-style:none; }
+form.formtastic abbr, form.formtastic acronym { border:0; font-variant:normal; }
+form.formtastic input, form.formtastic textarea, form.formtastic select { font-family:inherit; font-size:inherit; font-weight:inherit; }
+form.formtastic input, form.formtastic textarea, form.formtastic select { font-size:100%; }
+form.formtastic legend { color:#000; }
+
+
+/* FIELDSETS & LISTS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset { }
+form.formtastic fieldset.inputs { }
+form.formtastic fieldset.buttons { padding-left:25%; }
+form.formtastic fieldset ol { }
+form.formtastic fieldset.buttons li { float:left; padding-right:0.5em; }
+
+/* clearfixing the fieldsets */
+form.formtastic fieldset { display: inline-block; }
+form.formtastic fieldset:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+html[xmlns] form.formtastic fieldset { display: block; }
+* html form.formtastic fieldset { height: 1%; }
+
+
+/* INPUT LIs
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li { margin-bottom:1.5em; }
+
+/* clearfixing the li's */
+form.formtastic fieldset ol li { display: inline-block; }
+form.formtastic fieldset ol li:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+html[xmlns] form.formtastic fieldset ol li { display: block; }
+* html form.formtastic fieldset ol li { height: 1%; }
+
+form.formtastic fieldset ol li.required { }
+form.formtastic fieldset ol li.optional { }
+form.formtastic fieldset ol li.error { }
+  
+
+/* LABELS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li label { display:block; width:25%; float:left; padding-top:.2em; }
+form.formtastic fieldset ol li li label { line-height:100%; padding-top:0; }
+form.formtastic fieldset ol li li label input { line-height:100%; vertical-align:middle; margin-top:-0.1em;}
+
+
+/* NESTED FIELDSETS AND LEGENDS (radio, check boxes and date/time inputs use nested fieldsets)
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li fieldset { position:relative; }
+form.formtastic fieldset ol li fieldset legend { position:absolute; width:25%; padding-top:0.1em; }
+form.formtastic fieldset ol li fieldset legend span { position:absolute; }
+form.formtastic fieldset ol li fieldset ol { float:left; width:74%; margin:0; padding:0 0 0 25%; }
+form.formtastic fieldset ol li fieldset ol li { padding:0; border:0; }
+
+
+/* INLINE HINTS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li p.inline-hints { color:#666; margin:0.5em 0 0 25%; }
+
+
+/* INLINE ERRORS
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li p.inline-errors { color:#cc0000; margin:0.5em 0 0 25%; }
+form.formtastic fieldset ol li ul.errors { color:#cc0000; margin:0.5em 0 0 25%; list-style:square; }
+form.formtastic fieldset ol li ul.errors li { padding:0; border:none; display:list-item; }
+
+
+/* STRING & NUMERIC OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.string input { width:74%; }
+form.formtastic fieldset ol li.numeric input { width:74%; }
+
+
+/* TEXTAREA OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.text textarea { width:74%; }
+
+
+/* HIDDEN OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.hidden { display:none; }
+
+
+/* BOOLEAN OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.boolean label { padding-left:25%; width:auto; }
+form.formtastic fieldset ol li.boolean label input { margin:0 0.5em 0 0.2em; }
+
+
+/* RADIO OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.radio { }
+form.formtastic fieldset ol li.radio fieldset ol { margin-bottom:-0.6em; }
+form.formtastic fieldset ol li.radio fieldset ol li { margin:0.1em 0 0.5em 0; }
+form.formtastic fieldset ol li.radio fieldset ol li label { float:none; width:100%; }
+form.formtastic fieldset ol li.radio fieldset ol li label input { margin-right:0.2em; }
+
+
+/* CHECK BOXES (COLLECTION) OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.check_boxes { }
+form.formtastic fieldset ol li.check_boxes fieldset ol { margin-bottom:-0.6em; }
+form.formtastic fieldset ol li.check_boxes fieldset ol li { margin:0.1em 0 0.5em 0; }
+form.formtastic fieldset ol li.check_boxes fieldset ol li label { float:none; width:100%; }
+form.formtastic fieldset ol li.check_boxes fieldset ol li label input { margin-right:0.2em; }
+
+
+
+/* DATE & TIME OVERRIDES
+--------------------------------------------------------------------------------------------------*/
+form.formtastic fieldset ol li.date fieldset ol li,
+form.formtastic fieldset ol li.time fieldset ol li,
+form.formtastic fieldset ol li.datetime fieldset ol li { float:left; width:auto; margin:0 .3em 0 0; }
+
+form.formtastic fieldset ol li.date fieldset ol li label,
+form.formtastic fieldset ol li.time fieldset ol li label,
+form.formtastic fieldset ol li.datetime fieldset ol li label { display:none; }
+
+form.formtastic fieldset ol li.date fieldset ol li label input, 
+form.formtastic fieldset ol li.time fieldset ol li label input, 
+form.formtastic fieldset ol li.datetime fieldset ol li label input { display:inline; margin:0; padding:0;  }
+
+
+/* -------------------------------------------------------------------------------------------------
+
+Load this stylesheet after formtastic.css in your layouts to override the CSS to suit your needs.
+This will allow you to update formtastic.css with new releases without clobbering your own changes.
+
+For example, to make the inline hint paragraphs a little darker in color than the standard #666:
+
+form.formtastic fieldset ol li p.inline-hints { color:#333; }
+
+--------------------------------------------------------------------------------------------------*/
+
+.flash_notice {
+	border: 2px solid green;
+	padding: 1em;
+	margin-bottom: 1em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;	
+}
+.flash_error {
+	border: 2px solid red;
+	padding: 1em;
+	margin-bottom: 1em;
+	background-color: #f0f0f0;
+	font: bold smaller sans-serif;		
+}
+

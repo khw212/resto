@@ -1,0 +1,40 @@
+<div class="details editor">
+
+  <%# no user logged in %>
+  <% if current_user.nil? %>
+        <%= link_to t('resto.navigation.apply_for_job'), 
+        login_path(:return_to => job_path(job)) %>
+  
+  <%# strictly for job seeker %>
+  <% elsif me_job_seeker? && !me_admin? %>
+	  <% if current_user.profileable.telephone.blank? %>
+    
+      <%= link_to t('resto.navigation.apply_for_job'), "#", :class => 'action overlay', :rel => "#editor_phone_number"  %>
+      <div id="editor_phone_number" class="editor simple_overlay">
+        <p>
+        <%= t('resto.messages.job_application.phone_needed') %>
+        </p>
+        <% semantic_form_for current_user.profileable do |form| %>
+        <%= form.input :telephone %>
+        <br />
+        <br />
+        <%= form.submit t('resto.form.button.update') %>
+        <% end %>
+      </div>
+		
+	  <% else %>
+
+      <% job_application = job.job_applications.select { |ja| ja.job_seeker_id == current_user.profileable_id }.first %>
+      <% if job_application %>
+        <span><%= JobApplication.human_attribute_name(:status) %> :</span>
+        <%= job_application_image_tag(job_application.status) %>
+      <% else %>
+        <%= link_to t('resto.navigation.apply_for_job'), 
+        job_applications_path('job_application[job_id]' => job.id), 
+        :method => :post %>
+      <% end %>
+
+	  <% end %>
+
+  <% end %>
+</div>

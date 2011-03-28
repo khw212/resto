@@ -1,0 +1,28 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'form_search' %>
+<% end %>
+
+    <% job = @job %>
+
+    <div class="column1-unit">
+	  <% if @job_search_path %>
+	    <%= link_to t('resto.navigation.back_to_search_result'), @job_search_path %>
+	  <% end %>
+      
+      <%= render :partial => 'job_info', :locals => { :job => job } %>
+      <p><%= Job.human_attribute_name(:general_description) %>
+      </p>
+      <pre><%= job.general_description -%></pre>
+      <br /><br />
+      <p>
+        <%  name = job.education ? job.education.name : no_info_if_empty(nil) %>
+        <%= info_block( Job.human_attribute_name(:education_id), name ) %>
+        <%= info_block( Job.human_attribute_name(:experience_level), no_info_if_empty(job.experience_level) ) %>
+      </p>
+      
+      <p>
+      <%= Job.human_attribute_name(:job_requirements) %><br />
+      <pre><%= no_info_if_empty(job.job_requirements) -%></pre>
+      </p>
+    </div>
+

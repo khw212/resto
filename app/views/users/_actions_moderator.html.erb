@@ -1,0 +1,12 @@
+<div class="subcontent-unit-border-orange">
+  <div class="round-border-topleft"></div><div class="round-border-topright"></div>
+  <h1 class="orange"><%= t('resto.navigation.moderator') %></h1>
+  <p>
+    <ul>
+      <li>
+        <%= link_to t('resto.navigation.edit_profile'), edit_account_path(current_user.id) %></li>
+      <li>
+        <%= link_to t('resto.navigation.manage_jobs'), jobs_url %></li>
+    </ul>
+  </p>
+</div>

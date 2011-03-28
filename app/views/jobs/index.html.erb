@@ -1,0 +1,13 @@
+<% content_for :sidebar do %>
+  <%= render :partial => 'form_search' %>
+<% end %>
+
+<% content_for :title, t('resto.heading.jobs.index') %>
+
+<br />
+<p><%= t('resto.display.search', :count => @search.count) %></p>
+
+<%= render :partial => 'collection', :object => @jobs %>
+
+<%= will_paginate @jobs %>
+

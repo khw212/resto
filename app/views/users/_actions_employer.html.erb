@@ -1,0 +1,16 @@
+<div class="subcontent-unit-border-blue">
+  <div class="round-border-topleft"></div><div class="round-border-topright"></div>
+  <h1 class="blue"><%= t('resto.navigation.employer') %></h1>
+  <p>
+    <ul>
+      <li>
+        <%= link_to t('resto.navigation.edit_profile'), edit_account_path(current_user.id) %></li>
+      <li>
+        <%= link_to t('resto.navigation.post_jobs'), new_job_path %></li>
+      <li>
+        <%= link_to t('resto.navigation.my_jobs'), employer_path(current_user.profileable_id) %></li>
+      <li>
+        <%= link_to t('resto.navigation.search_job_seeker'), job_seekers_path %></li>
+    </ul>
+  </p>
+</div>

@@ -1,0 +1,27 @@
+Run "rake appdoc" to generate API documentation for your models and controllers.
+
+gem install httparty
+gem install ya2yaml
+sudo gem install authlogic
+gem install binarylogic-authlogic
+gem install justinfrench-formtastic
+gem install thoughtbot-paperclip
+gem install josevalim-inherited_resources
+gem install josevalim-simple_form
+gem install RedCloth
+gem install taps
+gem install rails-footnotes
+gem install binarylogic-searchlogic -v=2.3.1
+
+heroku db:pull
+
+
+Error: 
+uninitialized constant Footnotes::Notes::LogNote
+
+Fix : add this line at the begin of lib/rails-footnotes/notes/partials_note.rb
+require "#{File.dirname(__FILE__)}/log_note"
+
+http://github.com/josevalim/rails-footnotes/issues/#issue/15
+
+

@@ -1,0 +1,7 @@
+<div class="details editor">
+  <%= link_to t('resto.form.button.edit'), edit_account_path(id, :return_to => request.request_uri) %>
+  <% if me_admin? && @employer %>
+    <%= render :partial => 'subpath_editor', :locals => { :employer => @employer } %>
+    <%= link_to t('resto.form.button.assign_subpath'), "#", :class => 'action overlay', :rel => "#editor_subpath"  %>
+  <% end %>
+</div>

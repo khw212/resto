@@ -1,0 +1,24 @@
+<h1><%= link_to job.position_name, job %></h1> 
+
+<%# only job creator can edit job %>     
+<% if my_job?(job) %>
+  <%= render :partial => 'jobs/editor', :locals => { :job => job } %>
+  
+  <%# admin cant edit job applications %>
+  <% unless me_admin? %>
+    <%= render :partial => 'job_applications', :locals => { :job => job } %>
+  <% end %>
+<% end %>
+
+<h3>
+  <span class="timestamp"><%= job.created_at %></span>
+</h3>
+
+<p>
+  <%= info_block t('resto.form.resume.location'), "#{job.city}, #{job.state} (#{ job.postal_code })" %> 
+  <%= info_block Job.human_attribute_name(:position), job.position_type.name %>
+  <%= info_block Job.human_attribute_name(:category), job.job_category.name %>
+</p>
+
+
+<!--      <p class="details">| Number of applicants :  |</p>-->

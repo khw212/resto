@@ -1,0 +1,98 @@
+<% content_for :title, t('resto.navigation.my_job_applicants') %>
+
+<h2><%= link_to @job.position_name, @job %></h2> 
+
+<% favored  = @job_applications.select{|ja| ja.status == 2} %>
+<% unread   = @job_applications.select{|ja| ja.status == 0} %>
+<% read     = @job_applications.select{|ja| ja.status == 1} %>
+<% rejected = @job_applications.select{|ja| ja.status == 3} %>
+
+<div class="column1-unit">
+  <%= image_tag "favored.png" %>
+  ( <%= favored.length %> )
+  <br />
+<%=  link_to t("resto.messages.job_application.status.employer.favored"), "#", :class => "toggle", :rel => "#favored" %>
+  <div id="favored" class="job_applications">
+  
+    <% for job_application in favored %>
+      <div class="job_application">
+        <% job_seeker = job_application.job_seeker %>
+        <%= link_to image_tag('unread.png'), 
+          job_application_path(job_application, :status => '0', :job_id => job_application.job.id), 
+          :method => :put %>
+
+        <%= link_to image_tag('rejected.png'), 
+          job_application_path(job_application, :status => '3', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%= link_to job_application.job_seeker.name, job_application.job_seeker %> (
+        <%= t('resto.display.location', :city => job_application.job_seeker.city, :state => job_application.job_seeker.state) %> )<br />
+        <%= JobSeeker.human_attribute_name :telephone %>: <%= job_application.job_seeker.telephone %>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
+
+<div class="column1-unit">
+  <%= image_tag "read.png" %>
+  ( <%= unread.length + read.length %> )
+  <br />
+<%=  link_to t("resto.messages.job_application.status.employer.read"), "#", :class => "toggle", :rel => "#read" %>
+  <div id="read" class="job_applications">
+  
+    <% for job_application in unread %>
+      <div class="job_application unread">
+        <%= link_to image_tag('favored.png'), 
+          job_application_path(job_application, :status => '2', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%= link_to image_tag('rejected.png'), 
+          job_application_path(job_application, :status => '3', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%# only unread application that redirected to job_application#show %>
+        <%= link_to job_application.job_seeker.name, 
+          job_application_path(job_application, :job_id => job_application.job.id), 
+          :target => '_blank' %> (
+        <%= t('resto.display.location', :city => job_application.job_seeker.city, :state => job_application.job_seeker.state) %> )<br />
+        <%= JobSeeker.human_attribute_name :telephone %>: <%= job_application.job_seeker.telephone %>
+      </div>
+    <% end %>
+    
+    <% for job_application in read %>
+      <div class="job_application">
+        <%= link_to image_tag('favored.png'), 
+          job_application_path(job_application, :status => '2', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%= link_to image_tag('rejected.png'), 
+          job_application_path(job_application, :status => '3', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%= link_to job_application.job_seeker.name, job_application.job_seeker %> (
+        <%= t('resto.display.location', :city => job_application.job_seeker.city, :state => job_application.job_seeker.state) %> )<br />
+        <%= JobSeeker.human_attribute_name :telephone %>: <%= job_application.job_seeker.telephone %>
+      </div>
+    <% end %>
+    
+  </div>
+</div>
+
+<div class="column1-unit">
+  <%= image_tag "rejected.png" %>
+  ( <%= rejected.length %> )
+  <br />
+  <%=  link_to t("resto.messages.job_application.status.employer.rejected"), "#", :class => "toggle", :rel => "#rejected" %>
+  <div id="rejected" class="job_applications hidden">
+    <% for job_application in rejected %>
+      <div class="job_application">
+        <%= link_to image_tag('unread.png'), 
+          job_application_path(job_application, :status => '0', :job_id => job_application.job.id), 
+          :method => :put %>
+
+        <%= link_to image_tag('favored.png'), 
+          job_application_path(job_application, :status => '2', :job_id => job_application.job.id), 
+          :method => :put %>
+        <%= link_to job_application.job_seeker.name, job_application.job_seeker %> (
+        <%= t('resto.display.location', :city => job_application.job_seeker.city, :state => job_application.job_seeker.state) %> )<br />
+        <%= JobSeeker.human_attribute_name :telephone %>: <%= job_application.job_seeker.telephone %>
+      </div>
+    <% end %>
+  </div>
+</div>

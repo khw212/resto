@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="<%= I18n.locale %>">
+
+<!--  Version: Multiflex-4.2 / Overview                     -->
+<!--  Date:    January 20, 2008                             -->
+<!--  Design:  www.1234.info                                -->
+<!--  License: Fully open source without restrictions.      -->
+<!--           Please keep footer credits with the words    -->
+<!--           "Design by 1234.info" Thank you!             -->
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="3600" />
+  <meta name="revisit-after" content="2 days" />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Design: 1234.info / Modified: wynst" />
+  <meta name="author" content="Application: wynst (http://wynst.web.id)" />
+  <meta name="distribution" content="global" />
+  <meta name="description" content="Career Site for Chinese American: find restaurant, retail and office jobs" />
+  <meta name="keywords" content="Chinese Restaurant jobs, job, career, Chinese American Career" />
+  
+  <%= stylesheet_link_tag 'mf42_layout4_setup', 'mf42_layout4_text', 'formtastic', 'formtastic_changes', 'pagination', 'resto', :media => 'all' %>
+  
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <title><%= t('resto.name') %> - <%= yield(:title) || t('resto.tagline') %></title>
+</head>
+
+<!-- Global IE fix to avoid layout crash when single word size wider than column width -->
+<!--[if IE]><style type="text/css"> body {word-wrap: break-word;}</style><![endif]-->
+
+<body>
+  <!-- Main Page Container -->
+  <div class="page-container">
+
+   <!--  START COPY here -->
+
+    <!-- A. HEADER -->      
+    <div class="header">
+      
+      <!-- A.1 HEADER TOP -->
+      <div class="header-top">
+        <div class="round-border-topleft"></div><div class="round-border-topright"></div>      
+        
+        <!-- Sitelogo and sitename -->
+        <a class="sitelogo" href="#" title="Home"></a>
+        <!--
+		<div class="sitename">
+          <h1><%= link_to t('resto.name'),root_path %></h1> 
+          <h2><%= t('resto.tagline') %></h2>
+        </div>
+		-->
+      </div>
+            
+      <!-- A.3 HEADER BOTTOM -->
+      <div class="header-bottom">
+      
+        <!-- Navigation Level 2 (Drop-down menus) -->
+        <div class="nav2">
+	
+          <!-- Navigation item -->
+          <ul>
+            <li><%= link_to t('resto.navigation.home'), root_path %></li>
+          </ul>
+
+          <!-- Navigation item -->
+          <ul>
+            <li><%= link_to t('resto.navigation.search_jobs'), jobs_path %></li>
+          </ul>
+          
+          <!-- Navigation item -->
+          <ul>
+            <li><%= link_to t('resto.navigation.job_seeker'), job_seekers_path %>
+              <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                  <li><%= link_to t('resto.navigation.search_jobs'), jobs_path %></li>
+
+		              <% if current_user %>
+		                <li><%= link_to t('resto.navigation.logout'), logout_path %></li>
+		              <% else %>
+		                <li><%= link_to t('resto.navigation.login'), login_path %></li>
+						<li><%= link_to t('resto.navigation.register'), login_path %></li>
+		              <% end %>
+			      <li><%= link_to t('resto.navigation.my_job_applications'), job_applications_path %></li>
+                </ul>
+              <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+          </ul> 		  
+          <ul>
+            <li></li>
+          </ul>
+
+          <!-- Navigation item -->
+          <ul>
+            <li><%= link_to t('resto.navigation.employer'), employers_path %>
+              <!--[if lte IE 6]><table><tr><td><![endif]-->
+                <ul>
+                  <li><%= link_to t('resto.navigation.post_jobs'), new_job_path %></li>
+
+		              <% if current_user %>
+		                <li><%= link_to t('resto.navigation.logout'), logout_path %></li>
+		              <% else %>
+		                <li><%= link_to t('resto.navigation.login'), login_path %></li>
+						<li><%= link_to t('resto.navigation.register'), login_path %></li>
+		              <% end %>
+                </ul>
+              <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+            </li>
+          </ul> 
+          
+          <ul>
+            <li>
+              <% if current_user %>
+                <%= link_to t('resto.navigation.logout'), logout_path %></li>
+              <% else %>
+                <%= link_to t('resto.navigation.login'), login_path %></li>
+              <% end %>
+            <li>
+          </ul>
+		  		  
+          <!-- Navigation item -->
+          <ul>
+            <li><%= link_to t('resto.navigation.contact_us'), contact_path %></li>
+          </ul>
+
+        </div>
+	  </div>
+
+      <!-- A.4 HEADER BREADCRUMBS -->
+
+      <!-- Breadcrumbs -->
+      <div class="header-breadcrumbs">
+        <table border="0" width="750"><tr><td width="220">&nbsp;</td><td width="530">
+        	<%= render :partial => 'layouts/flashes' %>	
+        </td></tr></table>
+		
+<!--        <ul>-->
+<!--          <li><a href="#">Home</a></li>-->
+<!--          <li><a href="#">Category-1</a></li>-->
+<!--          <li><a href="#">Section-1.1</a></li>-->
+<!--          <li><a href="#">Content-1.1.1</a></li>          -->
+<!--        </ul>-->
+
+        <!-- Search form -->                  
+<!--        <div class="searchform">-->
+<!--          <form action="index.html" method="get">-->
+<!--            <fieldset>-->
+<!--              <input name="field" class="field"  value=" Search..." />-->
+<!--              <input type="submit" name="button" class="button" value="GO!" />-->
+<!--            </fieldset>-->
+<!--          </form>-->
+<!--        </div>-->
+      </div>
+    </div>
+
+   <!--  END COPY here -->
+
+    <!-- B. MAIN -->
+    <div class="main">
+ 
+      <!-- B.1 MAIN NAVIGATION -->
+      <div class="main-navigation">
+
+        <!-- Navigation Level 3 -->
+        <div class="round-border-topright"></div>
+        <%= yield :sidebar %>
+        <dl class="nav3-grid">
+<!--          <dt><a href="#">Navlink 11</a></dt>-->
+<!--          <dt><a href="#">Navlink 12</a></dt>-->
+<!--            <dd><a href="#">Navlink 121</a></dd>-->
+<!--            <dd><a href="#">Navlink 122</a></dd>-->
+<!--            <dd><a href="#">Navlink 123</a></dd>		-->
+<!--          <dt><a href="#">Navlink 13</a></dt>-->
+<!--          <dt><a href="#">Navlink 14</a></dt>-->
+<!--          <dt><a href="#">Navlink 15</a></dt>-->
+        </dl> 
+      </div>
+ 
+      <!-- B.2 MAIN CONTENT -->
+      <div class="main-content">
+        <h1 class="pagetitle"><%= yield(:title) || ' ' %></h1>
+        <%= yield %>
+      </div>
+                
+      <!-- B.3 SUBCONTENT -->
+      <div class="main-subcontent">
+
+
+      </div>
+    </div>
+      
+    <!-- C. FOOTER AREA -->      
+
+    <div class="footer">
+      <p><%= t('resto.footer.copyright', :company => "Honsan Inc.") %></p>
+    </div>      
+  </div> 
+  
+</body>
+</html>

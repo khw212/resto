@@ -1,0 +1,7 @@
+<%= content_for :title, t('resto.heading.jobs.edit') %>
+
+<% semantic_form_for(@job) do |form| %>
+  <%= render :partial => 'form', :locals => {:form => form} %>
+  <p><%= form.submit t('resto.form.button.update') %></p>
+<% end %>
+

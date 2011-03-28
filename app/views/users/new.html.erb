@@ -1,0 +1,10 @@
+<%= content_for :title, t('resto.heading.register') %>
+
+<% semantic_form_for @user, :url => accounts_path do |form| %>
+  <%= render :partial => "form", :object => form %>
+  <% form.buttons do %>
+    <%= form.commit_button "Register" %>
+  <% end %>
+
+<% end %>
+

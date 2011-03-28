@@ -1,0 +1,182 @@
+<%= content_for :title, "Resume: #{ @resume.name }" %>
+
+<% if my_profile?(@job_seeker.user.id) %>
+  <%= render :partial => 'editor', :locals => { :id => @job_seeker.user.id } %>
+<% end %>      
+
+
+<% if me_employer? %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'form_search' %>
+  <% end %>
+<% end %>
+
+
+<% editable = my_resume?(@resume) %>
+
+    <%# only job creator can edit job %>
+    <% if editable %>
+      <%#= render :partial => 'editor', :locals => { :resume => @resume } %>
+    <% end %>
+    
+    <div class="resume column1-unit">
+
+      <h3>
+        <%= @job_seeker.name %>
+        @ 
+        <%= t('resto.display.location', :city => @job_seeker.city, :state => @job_seeker.state) %>
+      </h3>
+      
+      <% if editable %>
+        <%= render :partial => 'resumes/editor_public', 
+          :locals => { :job_seeker => @job_seeker, :resume => @resume } %>
+      <% end %>
+      
+      <br />
+      
+      
+      <h3><%= t('resto.form.fieldset.desire') %></h3>
+      
+      <% if editable %>
+        <div class="editor">
+          <%= link_to t('resto.form.button.edit'), "#", :class => 'action overlay', :rel => "#editor_desire"  %>
+        </div>
+      <% end %>
+
+      <p>
+
+        <% #date_available = @resume.date_available ? l(@resume.date_available, :format => :long) : nil
+		   date_available = @resume.date_available
+		 %>
+        <%= info_block( Resume.human_attribute_name(:date_available), date_available ) %>
+        <% if @resume.desired_position_type_id %>
+          <%= info_block( Job.human_attribute_name(:desired_position_type),
+            @resume.desired_position_type.name ) %>
+            <% if @resume.desired_position_type_id == 2 %>
+              <%= info_block( Job.human_attribute_name(:desired_hourly_pay_rate),
+                t('resto.display.hourly_pay', :amount => @resume.desired_hourly_pay_rate) ) %>
+            <% else %>
+              <%= info_block( Job.human_attribute_name(:desired_monthly_salary),
+                t('resto.display.monthly_salary', :amount => @resume.desired_monthly_salary) ) %>
+            <% end %>
+        <% end %>
+      </p>
+      
+      <p>
+        <h3><%= Resume.human_attribute_name :preferred_locations %></h3>
+        <% if editable %>
+          <%= render :partial => 'resumes/editor_location', 
+            :locals => { :job_seeker => @job_seeker, :resume => @resume } %>
+          <div class="editor">
+            <%= link_to t('resto.form.button.edit'), "#", :class => 'action overlay', :rel => "#editor_location"  %>
+          </div>
+        <% end %>
+        <ul>
+          <% if @resume.preferred_locations %>
+            <% for location in @resume.preferred_locations.split('.') %>
+              <li><%= location %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </p>
+      
+      <br /><br />
+      
+      <p>
+        <%= Resume.human_attribute_name :objective %><br />
+        <%= no_info_if_empty @resume.objective %>
+      </p>
+      
+      <br /><br />
+
+      <% if editable %>
+        <%= render :partial => 'resumes/editor_desire', 
+          :locals => { :job_seeker => @job_seeker, :resume => @resume } %>
+      <% end %>
+      
+      
+      <h3><%= t('resto.form.fieldset.education') %></h3>
+      
+      <% if editable %>
+        <div class="editor">
+          <%= link_to t('resto.form.button.edit'), "#", :class => 'action overlay', :rel => "#editor_education" %>
+        </div>
+      <% end %>
+      
+      <p>
+        <% if @resume.education.blank? %>
+          <%= t('resto.form.hint.empty') %>
+        <% else %>
+          <%= "#{ @resume.education.name } @ #{ @resume.institution }" %>
+        <% end %>
+      </p>
+      
+      <% if editable %>
+        <%= render :partial => 'resumes/editor_education', 
+          :locals => { :job_seeker => @job_seeker, :resume => @resume } %>
+      <% end %>
+      
+      <br /><br />
+      
+      <h3><%= t('resto.form.fieldset.experience') %></h3>
+
+      <% if editable %>
+        <div class="editor">
+          <%= link_to t('resto.form.button.add'), "#", :class => 'action overlay', :rel => "#editor_experience" %>
+        </div>
+      <% end %>
+      
+      <ul>
+        <% for experience in @resume.experiences %>
+          <li>
+          <%= "%s (%s-%s)" %[experience.job_category.name, 
+            experience.year_used,
+            experience.year_used+experience.years_of_experience] %>
+          
+          <% if editable %>
+            <%= link_to t('resto.form.button.remove'), 
+              job_seeker_experience_path(@job_seeker,experience), 
+              :confirm => t('resto.messages.confirm'), 
+              :method => :delete, 
+              :class => 'action' %>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
+      
+      <% if editable %>
+        <%= render :partial => 'resumes/editor_append_experience', 
+          :locals => { :job_seeker => @job_seeker, :resume => @resume } %>
+      <% end %>
+      
+      <br /><br />
+      
+      <h3><%= t('resto.form.fieldset.job_history') %></h3>
+
+      <% if editable %>
+        <div class="editor">
+          <%= link_to t('resto.form.button.add'), "#", :class => 'action overlay', :rel => "#editor_employer" %>
+        </div>
+      <% end %>
+      
+      <ul>
+        <% for job_history in @resume.job_histories %>
+          <li>
+          <%= "%s @ %s, %s, %s" % [job_history.position, 
+            job_history.employer_name, 
+            job_history.employer_city, 
+            job_history.employer_state] %>
+          <% if editable %>
+            <%= link_to t('resto.form.button.remove'), job_seeker_job_history_path(@job_seeker,job_history), :confirm => t('resto.messages.confirm'), :method => :delete, :class => 'action' %>
+          <% end %>
+          </li>
+        <% end %>
+      </ul>
+      
+      <% if editable %>
+        <%= render :partial => 'resumes/editor_append_job_history', 
+          :locals => { :job_seeker => @job_seeker } %>
+      <% end %>
+      
+    </div>
+

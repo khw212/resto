@@ -1,0 +1,9 @@
+<div class="details editor">
+  <span><%= link_to t('activerecord.models.job_application'), applicants_job_path(job) %>: </span>
+  <%= image_tag 'unread.png', :title => 'unread' %>
+  <span>( <%= job.job_applications.select{|ja| ja.status = 0}.length -%> )</span>
+  <%= image_tag 'favored.png', :title => 'favored' %>
+  <span>( <%= job.job_applications.select{|ja| ja.status = 2}.length -%> )</span>
+  / <b>( <%= job.job_applications.length %> )</b></span>
+
+</div>

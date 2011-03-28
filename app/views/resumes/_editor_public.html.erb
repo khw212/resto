@@ -1,0 +1,13 @@
+    <div class="editor">
+    
+      <% status = resume.public ? t('resto.form.resume.status.public') : t('resto.form.resume.status.private') %>
+      
+      <p>
+      <%= info_block t('activerecord.attributes.resume.public'), status %>
+      </p>
+      
+        <% value = resume.public ? "false" : "true" %>
+        <%= link_to t('resto.form.button.change_public'), 
+          job_seeker_resume_path(job_seeker,resume, 'resume[public]' => value), 
+          :method => :put %>
+    </div>

@@ -1,0 +1,38 @@
+<% content_for :javascript do %>
+jQuery(function($) {
+
+  <% if resume.date_available %>
+    <%= "var date = new Date(Date.parse('#{ resume.date_available.month }/#{ resume.date_available.day }/#{ resume.date_available.year }'));" %>
+  <% else %>
+    var date = new Date();
+  <% end %>
+  
+  $('select#resume_date_available_3i').val( date.getDate() );
+  $('select#resume_date_available_2i').val( date.getMonth()+1 );
+  $('select#resume_date_available_1i').val( date.getFullYear() );
+  
+});
+
+<% end %>
+
+    <div id="editor_desire" class="editor simple_overlay">
+
+<% semantic_form_for(resume, :url => job_seeker_resume_path(job_seeker,resume), :html => { :class => "clean" }) do |form| %>
+    <% form.inputs :name => t('resto.form.fieldset.desire') do %>
+      <%= form.input :name %>
+      <%#= form.input :desired_position %>
+      <%= form.input :objective %>
+      <%= form.input :date_available, 
+        :order      => [:day, :month, :year],
+        :start_year => Time.now.year, 
+        :end_year   => Time.now.year + 2 %>
+      <%= form.input :desired_position_type %>
+      <%= form.input :desired_monthly_salary,  :as => :select, :collection => options_for_monthly_salary %>
+      <%= form.input :desired_hourly_pay_rate, :as => :select, :collection => options_for_hourly_pay_rate %>
+      
+    <% end %>
+  <p>
+  <%= form.submit t('resto.form.button.update') %></p>
+<% end %>
+
+</div>

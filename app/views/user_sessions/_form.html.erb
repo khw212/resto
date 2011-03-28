@@ -1,0 +1,19 @@
+<h1 class="pagetitle"><%= t('resto.heading.login') %></h1>
+<div class="loginform">
+
+<% form_for @user_session, :url => user_session_path do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :login %><br />
+  <%= f.text_field :login, :class => 'field' %><br />
+  <br />
+  <%= f.label :password %><br />
+  <%= f.password_field :password, :class => 'field' %><br />
+  <br />
+  <%= f.check_box :remember_me %><%= f.label :remember_me %><br />
+  <br />
+  <%= captcha_block t('resto.form.login.captcha') %>
+  <br />
+  <%= f.submit t('resto.form.button.login'), :class => 'button' %>
+<% end %>
+
+</div>

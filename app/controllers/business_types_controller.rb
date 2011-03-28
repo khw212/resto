@@ -1,0 +1,2 @@
+class BusinessTypesController < SimpleAdminDataController
+end

@@ -1,0 +1,7 @@
+<%= content_for :title, t('resto.heading.accounts.edit') %>
+
+<% semantic_form_for @user, :url => account_path(@user) do |form| %>
+  <%= render :partial => "form", :object => form %>
+  <p><%= form.submit t('resto.form.button.update') %></p>
+<% end %>
+

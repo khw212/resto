@@ -1,0 +1,25 @@
+<%= content_for :title, "%s %s" % [t('resto.heading.list'),resource_class] %>
+
+<div class="editor">
+  <%= link_to t('resto.navigation.new_data'), new_resource_path, :class => 'action' %>
+</div>
+
+<table>
+  <tr>
+    <th><%= image_tag("locales/en.png") %></th>
+    <th><%= image_tag("locales/zh-TW.png") %></th>
+    <th><%= image_tag("locales/zh-CN.png") %></th>
+  </tr>
+
+  <% for item in collection %>
+  <tr>
+    <td><%= item.name_en %></td>
+    <td><%= item.name_zh_tw %></td>
+    <td><%= item.name_zh_cn %></td>
+
+    <td><%= link_to t('resto.form.button.edit'), edit_resource_path(item) %></td>
+    <td><%= link_to t('resto.form.button.delete'), item, :confirm => t('resto.messages.confirm'), :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
+

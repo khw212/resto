@@ -1,0 +1,29 @@
+<h1><%= link_to job.position_name, job %></h1> 
+
+<%# only job creator can edit job %>     
+<% if my_job?(job) %>
+  <%= render :partial => 'jobs/editor', :locals => { :job => job } %>
+<% end %>
+
+<%= render :partial => 'jobs/apply', :locals => { :job => job } %>
+
+<h3>
+  <span class="timestamp"><%= job.created_at.strftime("%Y-%m-%d %I:%M %p") %></span>, 
+  by 
+  <% if job.employer.confidential %>
+    [<%= t('activerecord.attributes.employer.confidential') -%>]
+  <% else %>
+    <%= job.employer.business_name %>
+  <% end %>
+</h3>
+
+<p>
+  <%= info_block t('resto.form.resume.location'), "#{job.city}, #{job.state} (#{ job.postal_code })" %> 
+  <%= info_block Job.human_attribute_name(:position), job.position_type.name %>
+  <%= info_block Job.human_attribute_name(:category), job.job_category.name %>
+</p>
+
+
+
+<br />
+<!--      <p class="details">| Number of applicants :  |</p>-->

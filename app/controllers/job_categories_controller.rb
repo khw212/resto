@@ -1,0 +1,2 @@
+class JobCategoriesController < SimpleAdminDataController
+end

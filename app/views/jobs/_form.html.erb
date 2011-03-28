@@ -1,0 +1,37 @@
+<%# only employer has the city JS %>
+<% unless me_admin? || me_moderator? %>  
+  <% content_for :javascript do %>
+  jQuery(function($) { 
+    $("#set-employer-location-action").click( function() {
+       $("#job_city").val('<%= current_user.profileable.city -%>');
+      $("#job_state").val('<%= current_user.profileable.state -%>');
+	  $("#job_postal_code").val('<%= current_user.profileable.postal_code -%>');
+      return false;
+    });
+  });
+  <% end %>
+<% end %>
+
+<% form.inputs :name => "Job Details" do %>
+
+  <% if me_admin? %>
+    <%= form.input :employer %>
+  <% end %>
+  
+  <%= form.input :position_name %>
+  
+  <% unless me_admin? || me_moderator? %>
+    <%= link_to t('resto.navigation.set_employer_location_action'), "#", :class => 'action', :id => 'set-employer-location-action' %>
+  <% end %>
+  <%= trap_door_field %>
+  <%= form.input :city %>
+  <%= form.input :state, :as => :select, :collection => Carmen::states('US') %>
+  <%= form.input :postal_code %>
+  <%= form.input :job_category %>
+  <%= form.input :position_type %>
+  <%= form.input :education %>
+  <%= form.input :experience_level %>
+  <%= form.input :general_description %>
+  <%= form.input :job_requirements %>
+<% end %>
+

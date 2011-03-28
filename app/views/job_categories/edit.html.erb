@@ -1,0 +1,7 @@
+<%= content_for :title, "%s %s" % [t('resto.heading.edit'),resource_class] %>
+
+<% form_for(resource) do |form| %>
+  <%= render :partial => 'form', :locals => {:form => form} %>
+  <p><%= form.submit t('resto.form.button.update') %></p>
+<% end %>
+

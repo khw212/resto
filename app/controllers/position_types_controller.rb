@@ -1,0 +1,2 @@
+class PositionTypesController < SimpleAdminDataController
+end

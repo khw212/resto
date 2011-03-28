@@ -1,0 +1,383 @@
+en:
+  simple_form:
+    models:
+      contact_form: "Resto contact form"
+    attributes:
+      email: "E-mail"
+      message: "Message"
+    messages:
+      blank: "can not be blank"
+      invalid: "is not valid"
+    request:
+      title: "Technical information about the user"
+      remote_ip: "IP Address"
+      user_agent: "Browser"
+      
+  authlogic:
+    error_messages:
+      login_blank: can not be blank
+      login_not_found: is not valid
+      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
+      email_invalid: should look like an email address.
+      password_blank: can not be blank
+      password_invalid: is not valid
+      not_active: Your account is not active
+      not_confirmed: Your account is not confirmed
+      not_approved: Your account is not approved
+      no_authentication_details: You did not provide any details for authentication.
+    models:
+      user_session: UserSession
+    attributes:
+      user_session:
+        login: login ID
+        email: email
+        password: password
+        remember_me: remember me
+  formtastic:
+    yes: 'Yes'
+    no: 'No'
+    create: 'Create'
+    save: 'Save'
+    submit: 'Submit'
+    required: 'Required'
+  flash:
+    actions:
+      create:
+        notice: "Resource was successfully created."
+      update:
+        notice: "Resource was successfully updated."
+  activerecord: 
+    models: 
+      experience: "Experience" 
+      education: "Education" 
+      business_type: "Business type" 
+      job: "Job" 
+      job_history: "Job history" 
+      resume: "Resume" 
+      admin: "Admin" 
+      job_category: "Job category" 
+      address: "Address" 
+      user: "User" 
+      employer: "Employer" 
+      position_type: "Position type" 
+      job_seeker: "Job Seeker"
+      job_application: "Job Application" 
+
+    attributes: 
+      experience: 
+        year_used: "Year last used" 
+        years_of_experience: "Years of experience" 
+        job_category: "Job category" 
+        resume: "Resume" 
+
+      education: 
+        name: "Name" 
+        resumes: "Resumes" 
+        jobs: "Jobs" 
+
+      business_type: 
+        name: "Name" 
+        employers: "Employers" 
+
+      job: 
+        position_name: "Title or Position Name" 
+        location: "Location" 
+        experience_level: "Experience Level" 
+        general_description: "General Description" 
+        job_requirements: "Job Requirements" 
+        job_category: "Job Category" 
+        employer: "Employer" 
+        position_type: "Available Position" 
+        education: "Desired Education Level" 
+        position: "Position" 
+        category: "Category" 
+        city: "City" 
+        state: "State" 
+        postal_code: "Zip" 
+        created_at: "Date"
+
+      job_history: 
+        position: "Position" 
+        employer_name: "Employer Name"
+        employer_city: "Employer City"
+        employer_state: "Employer State"
+        resume: "Resume" 
+        employer: "Employer" 
+
+      resume: 
+        name: "Name" 
+        public: "Resume Viewable by" 
+        desired_position: "Desired position" 
+        desired_position_type: "Desired position type" 
+        objective: "Objective" 
+        date_available: "Date available" 
+        desired_monthly_salary: "Desired monthly salary" 
+        desired_hourly_pay_rate: "Desired hourly pay rate" 
+        preferred_locations: "Preferred locations" 
+        institution: "Institution" 
+        job_title: "Job title" 
+        company: "Company" 
+        city: "City" 
+        state: "State" 
+        employers: "Employers" 
+        job_seeker: "Job seeker" 
+        experiences: "Experiences" 
+        job_histories: "Job histories" 
+        job_category: "Job category" 
+        education: "Education" 
+
+      admin: 
+        name: "Name" 
+        user: "User" 
+
+      job_category: 
+        name: "Name" 
+        resumes: "Resumes" 
+        experiences: "Experiences" 
+        jobs: "Jobs" 
+
+      address: 
+        telephone: "Telephone" 
+        address: "Address" 
+        city: "City" 
+        state: "State" 
+        postal_code: "Postal code" 
+        addressable_type: "Addressable type" 
+        adressable: "Adressable" 
+
+      user: 
+        login: "Login ID"
+        email: "Email" 
+        password: "Password"
+        password_confirmation: "Password (confirmation)"
+        crypted_password: "Crypted password" 
+        password_salt: "Password salt" 
+        persistence_token: "Persistence token" 
+        perishable_token: "Perishable token" 
+        profileable_type: "Profileable type" 
+        profileable: "Profileable" 
+
+      employer: 
+        business_name: "Business name" 
+        resumes: "Resumes" 
+        jobs: "Jobs" 
+        job_histories: "Job histories" 
+        address: "Address" 
+        business_type: "Business type" 
+        user: "User" 
+        city: "City"
+        state: "State"
+        postal_code: "Postal Code"
+        telephone: "Telephone"
+        confidential: "Confidential"
+
+      position_type: 
+        name: "Name" 
+        jobs: "Jobs" 
+
+      job_seeker: 
+        name: "Name" 
+        authorized_to_work_in_us: "Authorized to work in us" 
+        gender: "Gender" 
+        address: "Address" 
+        resume: "Resume" 
+        user: "User" 
+        city: "City"
+        state: "State"
+        postal_code: "Postal Code"
+        telephone: "Telephone"
+
+      resumes: 
+        public: "Public" 
+
+      job_application:
+        status: Job Application Status
+        
+  resto:
+    name: "Jobs"
+    tagline: "Realize Your Dream"
+    
+    navigation:
+      home: "Home"
+      search_jobs: "Search Jobs"
+      search_job_seeker: "Search Job Seeker"
+      search: "Search"
+      job_seeker: "Job Seeker"
+      employer: "Employer"
+      admin: "Admin"
+      moderator: "Moderator"
+      post_jobs: "Post Jobs"
+      contact_us: "Contact Us"
+      edit_profile: "Edit Profile"
+      login: "Login"
+      register: "Register"
+      logout: "Logout"
+      read_more: "Read more &raquo;"
+      my_jobs: "My Jobs"
+      my_resume: "My Resume"
+      search_by_keyword: "Search by Keyword"
+      search_by_state: "Browse by State"
+      set_employer_location_action: "Set job location from my business location"
+      apply_for_job: "Apply for this job"
+      my_job_applicants: "Job Applicants"
+      my_job_applications: "My Job Applications"
+      back_to_search_result: "&laquo; Back to search result"
+      #admins
+      manage_users: "Manage Users"
+      manage_jobs: "Manage Jobs"
+      manage_job_categories: "Manage Job Categories"
+      manage_business_types: "Manage Business Type"
+      manage_position_types: "Manage Position Type"
+      manage_educations: "Manage Education"
+      manage_pending_employers: "Manage Pending Employers"
+      new_data: "New Data"
+
+    heading:
+      login: Login
+      register: Register
+      welcome: Welcome
+      edit: Edit
+      new: New
+      list: Listing
+      job_seekers:
+        index: Job Seeker
+      employers:
+        index: Employer Directory
+        show: "Job Openings from {{employer}}"
+        pending: Pending Employers
+      jobs: 
+        index: Job Openings
+        new: Post a Job Opening
+        edit: Edit Job Information
+      accounts:
+        edit: Edit My Account
+        index: Manage Accounts
+      contact:
+        index: Contact Us
+        show: Thank you
+      error: "Resource Not Found (404)"
+      unauthorized: "Unauthorized (401)"
+        
+    display:
+      location: "{{city}}, {{state}}"
+      search: "There are currently {{count}} job openings."
+      monthly_salary: "USD {{amount}} / month"
+      hourly_pay: "USD {{amount}} / hour"
+      
+    footer:
+      copyright: "Copyright &copy; {{company}} | All Rights Reserved"
+
+    pagination:
+      previous: "&laquo; Previous"
+      next: "Next &raquo;"
+      
+    messages:
+      welcome: "Welcome {{user}}.<br /> Please navigate your account with action box on the right." 
+      confirm: "Are you sure?"
+      contact: "Please fill all the fields on the form provided below to send us a message.<br />"
+      msg_sent: "Your message has been sent. <br />Thank you for contacting us.<br />"
+      application_submitted: "Thank you. Your job application has been submitted."
+      new_user: "Create new user by type:"
+      account:
+        logged_in:  "Login successful!"
+        logged_out: "Logout successful!"
+        activated:  "account:{{email}} activated."
+        suspended:  "account:{{email}} suspended."
+        registered: "Account registered!"
+        employer_registered: "Account registered. Please wait for account activation email before logging in."
+        employer_confirmed: "Account: {{email}} confirmed."
+        employer_declined: "Account: {{email}} declined."
+        updated:    "Account updated!"
+        subpath_updated: "/{{subpath}} has been assigned to {{employer}}."
+      search:
+        job_seeker: "Enter keyword with City or State Code"
+        has_experience: "Has experience as"
+        any: "Any"
+        date: "Date"
+        order: "Sort results by"
+        
+      register:
+        employer: "As an Employer, you can post jobs for Job Seekers to apply for."
+        job_seeker: "As a Job Seeker, you can make your Resume searchable by Employers."
+      flash:
+        invalid_account: "Your account type cannot access this page"
+        captcha_error: "Incorrect characters for image verification"
+        form_error: "There are errors in your input, on fields marked with red notification"
+        must_login: "You must be logged in to access this page"
+        must_logout: "You must be logged out to access this page"
+        not_found: "We're sorry<br />We can't locate the resource you were looking for.<br />Please use navigation above."
+        unauthorized: "We're sorry.<br />Your account is not authorized to view this page.<br />Please use navigation above."
+        resume:
+          update: "Resume was successfully updated."
+          
+      job_application:
+        phone_needed: "Please update your phone number before applying for jobs"
+        status:
+          employer:
+            unread: Unread
+            read: Applicants
+            favored: Favorite
+            rejected: Rejected
+          job_seeker:
+            '0': Your application is not yet read by the employer.
+            '1': Your application has been read by the employer.
+            '2': You are favored by the employer.
+            '3': Your application will not be considered by the employer.
+        
+
+    form:
+      hint:
+        authorized_to_work_in_us: "By checking this, you stated that you have authorization documents to work in United States"
+        confidential: "By checking this, your business information will not be disclosed to public"
+        empty: "No Information Available"
+        query: "Keyword"
+        location: "City/State/Zip"
+        
+      button:
+        change_public: "Change Resume Visibility"
+        change_education: "Change Education Information"
+        edit: "Edit"
+        update: "Update"
+        add: "Add"
+        remove: "Remove"
+        login: "Login"
+        post: "Post Job"
+        delete: "Delete"
+        search: "Search"
+        create: "Create"
+        suspend: "Suspend"
+        activate: "Activate"
+        confirm: "Confirm"
+        show: "Show"
+        decline: "Decline"
+        declined: "Declined"
+        assign_subpath: "Assign Subpath"
+        
+      fieldset:
+        account: "Account"
+        profile: "Profile"
+        desire: "Desired Position & Objective"
+        education: "Highest Education"
+        experience: "Skills & Experience"
+        job_history: "Past Employers"
+        contact: "Message Details"
+      login:
+        captcha: "Please type the characters in the image"
+      profile:
+        male: "Male"
+        female: "Female"
+      contact:
+        name: "Name"
+        email: "E-mail"
+        website: "Website"
+        message: "Message"
+        submit: "Send message"
+      resume:
+        status:
+          public: "Public"
+          private: "Me Only"
+        location: "Location"
+          
+        display:
+          experience: "{{name}} at {{year}} for {{length}} years."

@@ -1,0 +1,13 @@
+    <div id="editor_employer" class="editor simple_overlay">
+
+<% semantic_form_for(JobHistory.new, :url => job_seeker_job_histories_path(job_seeker), :html => { :class => "clean" }) do |form| %>
+  <% form.inputs :name => t('resto.form.fieldset.job_history') do %>
+    <%= form.input :position %>
+    <%= form.input :employer_name %>
+    <%= form.input :employer_city %>
+    <%= form.input :employer_state, :as => :select, :collection => Carmen::states('US') %>
+    <%= form.submit t('resto.form.button.add') %>
+  <% end %>
+<% end %>
+
+    </div>

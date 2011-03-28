@@ -1,0 +1,23 @@
+<%#= link_to t('resto.navigation.search_by_keyword'), "#", :class => 'toggle', :rel => '#form-search' %>
+<h1 class="first"><%= t('resto.navigation.search_job_seeker') %></h1>
+
+<div class="searchform">
+<!--  <p><%= t('resto.messages.search.job_seeker') %></p>-->
+  <% form_tag job_seekers_path, :method => :get do %>
+    <%= label_tag :name, t('activerecord.attributes.job_seeker.name') %>
+    <br />
+    <%= text_field_tag :name, params[:name] %>
+    <br />
+    <%= label_tag :state, t('activerecord.attributes.resume.state') %>
+    <br />
+    <%= select_tag :state, options_for_state(params[:state]) %>
+    <br />
+    <br />
+    <input value="<%= t('resto.form.button.search') -%>" type="submit">
+  <% end %>
+
+  <br />
+  
+
+</div>
+

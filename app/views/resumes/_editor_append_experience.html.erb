@@ -1,0 +1,12 @@
+    <div id="editor_experience" class="editor simple_overlay">
+
+<% semantic_form_for(Experience.new, :url => job_seeker_experiences_path(job_seeker), :html => { :class => "clean" }) do |form| %>
+  <% form.inputs :name => t('resto.form.fieldset.experience') do %>
+    <%= form.input :job_category %>
+    <%= form.input :year_used %>
+    <%= form.input :years_of_experience %>
+    <%= form.submit t('resto.form.button.add') %>
+  <% end %>
+<% end %>
+
+    </div>

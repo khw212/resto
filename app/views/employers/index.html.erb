@@ -1,0 +1,50 @@
+<%= content_for :title, t('resto.heading.employers.index') %>
+
+
+<% if me_admin? %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'form_search_admin' %>>
+  <% end %>
+<% end %>
+
+<% unless me_admin? %>
+  <div class="alphalist">
+    <% ("A".."Z").to_a.push("#").each do |v| %>
+        <%= "| #{link_to v, employers_path(:letter => v)}" %>
+    <% end %>
+  </div>
+<% end %>
+
+<br />
+
+<div id="employers">
+  <% if @employers.nil? || @employers.empty? %>
+    <p><%= t('resto.form.hint.empty') %></p>
+  <% else %>
+    <%# divide the display by 2 %>
+    <% v1, v2 = @employers.in_groups(2, false) %>
+    <% [ {"column2-unit-left" => v1}, {"column2-unit-right" => v2} ].each do |a| %>
+      <% k = a.keys.first; v = a.values.first %>
+      <% if v %>
+        <div class="<%= k -%>">
+          <% for employer in v %>
+            <div class="employer">
+              <h2><%= link_to employer.business_name, employer_path(employer) %></h2>
+              
+              <% if my_profile?(employer.user.id) %>
+                <%= render :partial => 'editor', :locals => { :employer => employer, :id => employer.user.id } %>
+              <% end %>
+              
+              <span>
+                <%= "#{ employer.business_type.name } @ #{ employer.city }, #{ employer.state }" %> 
+              </span>
+            </div>
+            <br /><br />
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= will_paginate(@employers) %>

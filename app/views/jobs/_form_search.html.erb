@@ -1,0 +1,24 @@
+
+<h1 class="first"><%= t('resto.navigation.search_jobs') %></h1>
+
+<div class="searchform">
+  <% form_tag jobs_path, :method => :get do %>
+    
+    <%= label_tag :q, t('resto.form.hint.query') %><br />
+    <%= text_field_tag :q, params[:q] %><br />
+    <%= label_tag :q, t('resto.form.hint.location') %><br />
+    <%= text_field_tag :l, params[:l] %>
+    <br />
+    <br />
+    <input value="<%= t('resto.form.button.search') -%>" type="submit">
+  <% end %>
+</div>
+
+
+<h1><%= t('resto.navigation.search_by_state') %></h1>
+<div id="state-list">
+<% Carmen::states('US').each do |k,v| %>
+  <span><%= "#{ link_to k, jobs_path(:l => v) }" %></span>
+<% end %>
+</div>
+<br />

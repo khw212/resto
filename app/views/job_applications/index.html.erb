@@ -1,0 +1,11 @@
+<%= content_for :title, t('resto.navigation.my_job_applications') %>
+
+<br />
+<% for job_application in @job_applications %>
+  <div class="column1-unit">
+    <%= job_application_image_tag(job_application.status) %>
+    <%= link_to job_application.job.position_name, job_path(job_application.job) %>
+  </div>
+<% end %>
+<%= will_paginate @job_applications %>
+

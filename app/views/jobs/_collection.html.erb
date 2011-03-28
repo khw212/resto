@@ -1,0 +1,58 @@
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 48%"><%= Job.human_attribute_name(:position_name) %></th>
+      <th style="width: 20%"><%= Job.human_attribute_name(:employer) %></th>
+      <th style="width: 18%"><%= Job.human_attribute_name(:location) %></th>
+      <th style="width: 14%"><%= Job.human_attribute_name(:created_at) %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for job in collection %>
+  <tr class="<%= cycle("even", "odd") -%>">
+    <td>
+      <%= link_to truncate(job.position_name,:length => 30), job_path(job), :class => "job-overlay", :rel => "#job-#{ job.id }", :title => job.position_name %>
+      <%= "<div class=\"column1-unit simple_overlay\" id=\"job-#{ job.id }\">" %>
+        <%= render :partial => 'jobs/job_info', :locals => { :job => job } %>
+        <div class="ellipsize">
+          <p><%= Job.human_attribute_name(:general_description) %></p>
+          <br />
+          <div class="full">
+            <pre><%=h job.general_description -%>
+            </pre>
+          </div>
+          <div class="trim" style="display: none">
+            <pre><%=h truncate(job.general_description,:length => 160) %>
+            </pre>
+            <% if job.general_description.length > 160 -%>
+              <%= link_to t('resto.navigation.read_more'), "#", :class => "ellipsize-trigger" %>
+            <% end %>
+          </div>
+        </div>  
+      </div>
+    </td>
+    <td>
+     <% if job.employer.confidential %>
+      [<%= t('activerecord.attributes.employer.confidential') -%>]
+    <% else %>
+      <%= job.employer.business_name %>
+    <% end %>
+    </td>
+    <td>
+      <%= if job.city && job.city.size>0
+			"#{job.city}, #{job.state}"
+		  else
+			"#{job.state}"
+	      end
+	  %>
+    </td>
+    <td>
+      <%= job.created_at.to_date %>
+    </td>
+	</tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br /><br />
