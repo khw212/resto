@@ -23,7 +23,7 @@ config.action_mailer.delivery_method = :sendmail
 
 ActionMailer::Base.sendmail_settings = {
   :location       => '/usr/sbin/sendmail',
-  :arguments      => '-i -t support@mychio.com'
+  :arguments      => '-i -t support@domain.com'
 }
 
 #config.action_mailer.delivery_method = :smtp
@@ -31,10 +31,10 @@ config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address        => 'smtp.gmail.com',
     :port           => 587,
-    :domain         => 'casocial.com',
+    :domain         => 'domain.com',
     :authentication => :plain,
-    :user_name      => 'noreply@casocial.com',
-    :password       => '83Q565'
+    :user_name      => 'noreply@domain.com',
+    :password       => 'password'
 }
 
 #config.action_mailer.delivery_method = :sendmail
