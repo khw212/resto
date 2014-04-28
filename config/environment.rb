@@ -64,11 +64,11 @@ Rails::Initializer.run do |config|
 
   CAPTCHA_SALT = "somesalt"
   
-  config.action_mailer.default_url_options = { :host => "job.casocial.com" }
+  config.action_mailer.default_url_options = { :host => "www.domain.com" }
   config.i18n.default_locale = 'zh-CN'
   config.gem 'exception_notification'
 end
 
-ExceptionNotification::Notifier.sender_address =  %("Exception (casocial.com)" <kw@casocial.com>)
-ExceptionNotification::Notifier.exception_recipients = %w(kw@casocial.com)
+ExceptionNotification::Notifier.sender_address =  %("Exception (casocial.com)" <someone@domain.com>)
+ExceptionNotification::Notifier.exception_recipients = %w(someone@domain.com)
 
